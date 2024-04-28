@@ -1,0 +1,968 @@
+{% if type == 'theme' %}
+  {% if icon == 'zoom' or icon == 'plus' %}
+    <svg id="icon--plus" class="{{ classes }} stroke" width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="{{ fill }}" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+            <g class="icon-fill" transform="translate(-332.000000, -706.000000)" stroke="{{ fill }}" stroke-width="0.8">
+                <g id="Plus-icon" transform="translate(333.000000, 707.000000)">
+                    <line x1="6" y1="0" x2="6" y2="12" id="Path-2"></line>
+                    <line x1="0" y1="6" x2="12" y2="6" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--plus.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'zoom-out' or icon == 'minus' %}
+    <svg id="icon--minus" class="{{ classes }} stroke" width="14px" height="1px" viewBox="0 0 14 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="{{ fill }}" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+            <g class="icon-fill" transform="translate(-302.000000, -712.000000)" stroke="{{ fill }}" stroke-width="0.8">
+                <line x1="303" y1="712.5" x2="315" y2="712.5" id="Minus-icon"></line>
+            </g>
+        </g>
+        <style>#icon--minus.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'print' %}
+    <svg id="icon--print" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Desk---Gift-Card" transform="translate(-687.000000, -912.000000)" fill-rule="nonzero">
+                <g id="Print" transform="translate(687.000000, 910.000000)">
+                    <g id="dashicons-printer" transform="translate(0.000000, 2.000000)">
+                        <g id="Icon" transform="translate(2.000000, 2.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+                            <path d="M10,9 L5,9 L5,10 L10,10 L10,9 Z M11,13 L5,13 L5,14 L11,14 L11,13 Z M8,11 L5,11 L5,12 L8,12 L8,11 Z M15,4 L13,4 L13,0 L3,0 L3,4 L1,4 C0.4,4 0,4.4 0,5 L0,10 C0,10.6 0.4,11 1,11 L3,11 L3,16 L13,16 L13,11 L15,11 C15.6,11 16,10.6 16,10 L16,5 C16,4.4 15.6,4 15,4 Z M12,15 L4,15 L4,8 L12,8 L12,15 Z M12,4 L4,4 L4,1 L12,1 L12,4 Z M14,7 L13,7 L13,6 L14,6 L14,7 Z" ></path>
+                        </g>
+                        <rect  x="0" y="0" width="20" height="20"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <style>#icon--print:hover .hover-fill { fill: {{ hover }};}</style>
+        <style>#icon--print:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'wish' or icon == 'heart' %}
+    <svg id="icon--heart" class="{{ classes }} stroke" width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-378.000000, -642.000000)" stroke="{{ fill }}">
+                <g  transform="translate(378.000000, 643.000000)">
+                    <path d="M19.84,1.61 C18.8084758,0.577991468 17.409138,-0.00182562119 15.95,-0.00182562119 C14.490862,-0.00182562119 13.0915242,0.577991468 12.06,1.61 L11,2.67 L9.94,1.61 C7.79161231,-0.538387622 4.30838771,-0.538387596 2.16000006,1.61000006 C0.0116124038,3.75838771 0.0116123778,7.24161231 2.16,9.39 L3.22,10.45 L11,18.23 L18.78,10.45 L19.84,9.39 C20.8720085,8.3584758 21.4518256,6.95913803 21.4518256,5.5 C21.4518256,4.04086197 20.8720085,2.6415242 19.84,1.61 Z" ></path>
+                </g>
+            </g>
+        </g>
+        <style>#icon--heart.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'dropdown-arrow' or icon == 'down-carrot' %}
+    <svg id="icon--dropdown-arrow" class="{{ classes }} stroke" width="14px" height="6px" viewBox="0 0 14 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-218.000000, -710.000000)" stroke="{{ fill }}">
+                <polyline  points="219 710 225 716 231 710"></polyline>
+            </g>
+        </g>
+        <style>#icon--dropdown-arrow.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'account' or icon == 'user-circle' %}
+    <svg id="icon--account" class="{{ classes }} stroke" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g class="icon-fill" transform="translate(-398.000000, -703.000000)" stroke="{{ fill }}">
+                <g id="Account-Icon" transform="translate(398.000000, 703.000000)">
+                    <path d="M3.16881835,15.7516851 C3.76794965,12.7435106 6.5568776,10.4680707 9.90689161,10.4680707 C13.0775544,10.4680707 15.7456013,12.5063902 16.5301574,15.2750726"  stroke-linecap="round" stroke-linejoin="bevel"></path>
+                    <circle  cx="9.777514" cy="9.6419837" r="9.08695652"></circle>
+                    <circle  cx="10.0648486" cy="7.45105742" r="2.76559547"></circle>
+                </g>
+            </g>
+        </g>
+        <style>#icon--account.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'user-circle-logout' %}
+    <svg id="icon--user-circle-logout" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="icon-fill" fill="{{ fill }}">
+          <path d="M11.7,17.9c-0.7,0.2-1.4,0.3-2.1,0.3c-2.4,0-4.5-1-6.1-2.5C4.1,13,6.7,11,9.7,11c1.1,0,2.1,0.3,3,0.7
+            c0.4-0.2,0.7-0.4,1.2-0.5c-0.7-0.4-1.4-0.8-2.3-1c0.9-0.6,1.6-1.6,1.6-2.8c0-1.8-1.5-3.3-3.3-3.3c-1.8,0-3.3,1.5-3.3,3.3
+            c0,1.1,0.6,2.1,1.5,2.7c-2.5,0.5-4.5,2.3-5.3,4.6C1.6,13.4,1,11.6,1,9.6c0-4.7,3.9-8.6,8.6-8.6c4.7,0,8.6,3.9,8.6,8.6
+            c0,1-0.2,1.9-0.5,2.8c0.3,0.3,0.5,0.6,0.7,1c0.5-1.2,0.8-2.5,0.8-3.8c0-5.3-4.3-9.6-9.6-9.6S0,4.4,0,9.6c0,5.3,4.3,9.6,9.6,9.6
+            c1.1,0,2.1-0.2,3.1-0.5C12.3,18.5,12,18.2,11.7,17.9z M7.6,7.5c0-1.2,1-2.3,2.3-2.3c1.2,0,2.3,1,2.3,2.3s-1,2.3-2.3,2.3
+            C8.6,9.7,7.6,8.7,7.6,7.5z"/>
+          <polygon points="17.4,13.5 16.7,12.8 15,14.5 13.3,12.8 12.6,13.5 14.3,15.2 12.6,16.9 13.3,17.6 15,15.9 16.7,17.6 17.4,16.9
+            15.7,15.2 	"/>
+        </g>
+        <style>#icon--user-circle-logout:hover g.icon-fill { fill: {{ hover }} !important;}</style>
+    </svg>
+  {% elsif icon == 'bag' %}
+    <svg id="icon--bag" class="{{ classes }} stroke" width="15px" height="20px" viewBox="0 0 15 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g class="icon-fill" transform="translate(-434.000000, -703.000000)" stroke="{{ fill }}">
+                <g id="Bag-Icon" transform="translate(435.000000, 704.000000)">
+                    <g id="Group" transform="translate(3.477022, 0.192670)">
+                        <path d="M0,2.67647059 C0,1.1982967 1.1982967,-1.90174674e-14 2.67647059,-1.90174674e-14 C4.15464447,-1.90174674e-14 5.35294118,1.1982967 5.35294118,2.67647059" ></path>
+                    </g>
+                    <path d="M0.0358455882,2.86914053 L0.0358455882,15.4867876 C0.0358455882,16.1202907 0.54940132,16.6338464 1.18290441,16.6338464 L11.1240809,16.6338464 C11.757584,16.6338464 12.2711397,16.1202907 12.2711397,15.4867876 L12.2711397,2.86914053 L0.0358455882,2.86914053 Z" ></path>
+                </g>
+            </g>
+        </g>
+        <style>#icon--bag.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'checkmark' %}
+    <svg id="icon--checkmark" class="{{ classes }} stroke" width="15px" height="9px" viewBox="0 0 15 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+            <g class="icon-stroke" transform="translate(-496.000000, -709.000000)" stroke="{{ fill }}" stroke-width="0.8">
+                <polyline id="Checkmark" points="497 714 501 718 510 709"></polyline>
+            </g>
+        </g>
+        <style>#icon--checkmark.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'external-link' %}
+    <svg id="icon--external-link" class="{{ classes }} stroke" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-306.000000, -643.000000)" stroke="{{ fill }}">
+                <g id="external-link" transform="translate(307.000000, 644.000000)">
+                    <path d="M15,10 L15,16 C15,17.1045695 14.1045695,18 13,18 L2,18 C0.8954305,18 0,17.1045695 0,16 L0,5 C0,3.8954305 0.8954305,3 2,3 L8,3" ></path>
+                    <polyline  points="12 0 18 0 18 6"></polyline>
+                    <line x1="7" y1="11" x2="18" y2="0" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--external-link.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'link' %}
+    <svg id="icon--link" class="{{ classes }} stroke" width="24px" height="12px" viewBox="0 0 24 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-339.000000, -647.000000)" stroke="{{ fill }}">
+                <g id="link-2" transform="translate(340.000000, 648.000000)">
+                    <path d="M14,0 L17,0 C18.3260824,0 19.597852,0.526784202 20.5355339,1.46446609 C21.4732158,2.40214799 22,3.67391755 22,5 C22,7.76142375 19.7614237,10 17,10 L14,10 M8,10 L5,10 C3.67391755,10 2.40214799,9.4732158 1.46446609,8.53553391 C0.526784202,7.59785201 0,6.32608245 0,5 C0,2.23857625 2.23857625,1.77635684e-15 5,1.77635684e-15 L8,1.77635684e-15" ></path>
+                    <line x1="7" y1="5" x2="15" y2="5" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--link.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'gift' %}
+    <svg id="icon--gift" class="{{ classes }} stroke" width="140px" height="138px" viewBox="0 0 140 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Desk---Gift-Card" transform="translate(-650.000000, -351.000000)" fill="{{ fill }}" fill-rule="nonzero">
+                <g  transform="translate(462.000000, 265.000000)">
+                    <g id="np_gift-card_2226004_000000" transform="translate(188.000000, 86.000000)">
+                        <path d="M138.53549,109.013217 L134.866569,109.013217 L124.890791,109.013217 L110.142451,109.013217 L92.1432665,109.013217 L72.4348268,109.013217 L52.5261201,109.013217 L33.9696033,109.013217 L18.2928941,109.013217 L7.0618002,109.013217 C5.27290417,109.013217 3.4838529,108.983479 1.69495687,109.013217 L1.46451017,109.013217 C-0.488170057,109.013217 -0.488170057,111.986784 1.46451017,111.986784 L5.13343145,111.986784 L15.1092087,111.986784 L29.8575488,111.986784 L47.8567335,111.986784 L67.5651732,111.986784 L87.4738799,111.986784 L106.030397,111.986784 L121.707106,111.986784 L132.9382,111.986784 C134.727096,111.986784 136.516147,112.01652 138.305043,111.986784 L138.53549,111.986784 C140.48817,111.986784 140.48817,109.013217 138.53549,109.013217 L138.53549,109.013217 Z" ></path>
+                        <path d="M0,90.5027395 L0,97.2769333 L0,111.510089 L0,124.061765 L0,126.85434 C0.0121235686,129.604944 0.969823418,132.187354 2.78828112,134.271177 C4.86122049,136.643421 7.97070712,137.964529 11.1045557,137.994662 L11.8925334,137.994662 L16.9114083,137.994662 L25.7610082,137.994662 L37.5504921,137.994662 L51.3582948,137.994662 L66.281472,137.994662 L81.4349241,137.994662 L95.9094998,137.994662 L108.789996,137.994662 L119.185262,137.994662 L126.186146,137.994662 C127.095359,137.994662 127.9925,138.006672 128.895599,137.994662 C135.078263,137.934607 139.987897,132.919936 140,126.824361 L140,118.404509 L140,103.859103 L140,92.2683162 L140,90.5147314 C140,89.7039867 139.302937,89.0133455 138.484655,89.0133455 L134.817481,89.0133455 L124.846455,89.0133455 L110.105139,89.0133455 L92.1145265,89.0133455 L72.4154732,89.0133455 L52.5162484,89.0133455 L33.9685695,89.0133455 L18.2993265,89.0133455 L7.07358167,89.0133455 C5.28553763,89.0133455 3.49733842,88.9833181 1.70929438,89.0133455 L1.47895744,89.0133455 C-0.472792796,89.0133455 -0.472792796,92.0160866 1.47895744,92.0160866 L5.14613133,92.0160866 L15.1171574,92.0160866 L29.8584734,92.0160866 L47.8490857,92.0160866 L67.548139,92.0160866 L87.4473638,92.0160866 L105.995043,92.0160866 L121.664286,92.0160866 L132.890031,92.0160866 C134.65992,92.0160866 136.466274,92.0881533 138.254318,92.0160866 L138.484655,92.0160866 L136.96931,90.5147007 L136.96931,111.234552 L136.96931,123.774082 L136.96931,126.776824 C136.96931,128.878788 136.290433,130.89066 134.817543,132.452067 C133.253722,134.085579 131.132214,134.986356 128.86531,135.004497 L127.907605,135.004497 L122.725179,135.004497 L102.056303,135.004497 L73.555908,135.004497 L44.3525852,135.004497 L21.1497539,135.004497 C17.8039407,135.004497 14.4519206,135.034525 11.0999006,135.004497 C8.68744542,134.992485 6.48105835,133.971533 4.90513409,132.169796 C3.57161913,130.656388 3.01390084,128.71659 3.01390084,126.734698 L3.01390084,118.038726 L3.01390084,92.2453779 L3.01390084,90.5157769 C3.03208542,88.5640182 0,88.5640182 0,90.503765 L0,90.5027395 Z" ></path>
+                        <path d="M136.950523,51.115968 L136.950523,64.1065661 L136.950523,84.7158577 L136.950523,89.4507733 C137.447348,88.9530081 137.968417,88.4309537 138.465242,87.9331885 L134.799585,87.9331885 L124.832684,87.9331885 L110.097466,87.9331885 L92.114296,87.9331885 L72.4233918,87.9331885 L52.532399,87.9331885 L33.9923929,87.9331885 L18.329632,87.9331885 L7.108531,87.9331885 C5.33937422,87.9331885 3.53376717,87.8603442 1.74646282,87.9331885 L1.51622116,87.9331885 C2.01304617,88.4309537 2.53411449,88.9530081 3.0309395,89.4507733 L3.0309395,74.0320333 L3.0309395,52.9860647 L3.0309395,51.1770407 C3.0430565,49.2224058 3.68530725,47.2920136 4.98188233,45.8230072 C6.70869474,43.8683723 9.04135726,43.0306051 11.5981502,43.0306051 L21.0621928,43.0306051 L39.6146075,43.0306051 L63.0932381,43.0306051 L87.8018716,43.0306051 L109.510725,43.0306051 L124.464024,43.0306051 L128.147828,43.0306051 C130.159418,43.0306051 132.098263,43.406971 133.75233,44.6696203 C135.788116,46.2114943 136.921177,48.6154092 136.951423,51.1162788 C136.963542,53.0709136 140,53.0709136 139.980829,51.1162788 C139.920239,45.0337251 134.96403,40.0500123 128.89312,40.0075878 L127.075415,40.0075878 L114.703106,40.0075878 L94.1156798,40.0075878 L69.4861511,40.0075878 L45.0815283,40.0075878 L24.7236617,40.0075878 L12.7149246,40.0075878 C11.9454515,40.0075878 11.1699138,39.9772365 10.4004097,40.0379392 C4.57782715,40.462868 0.0699362732,45.3009077 0.021542716,51.1466302 C-0.026928395,56.6706725 0.021542716,62.1947148 0.021542716,67.7186017 L0.021542716,88.2548547 L0.021542716,89.4689257 C0.021542716,90.2884178 0.718316875,90.9865105 1.53626106,90.9865105 L5.20191791,90.9865105 L15.1688192,90.9865105 L29.9040369,90.9865105 L47.8872069,90.9865105 L67.578111,90.9865105 L87.4691039,90.9865105 L106.00911,90.9865105 L121.671871,90.9865105 L132.892972,90.9865105 C134.680276,90.9865105 136.467736,91.0168619 138.25504,90.9865105 L138.485282,90.9865105 C139.303226,90.9865105 140,90.2884178 140,89.4689257 L140,76.4783276 L140,55.869036 L140,51.1341204 C139.981824,49.1613037 136.952447,49.1613037 136.952447,51.1159105 L136.950523,51.115968 Z" ></path>
+                        <path d="M108.940335,21.4790021 C108.891481,28.9668355 104.238235,36.0135621 97.1972797,38.6981638 C95.4141776,39.3722006 93.5332127,39.8011188 91.6402105,39.9114269 C90.2173556,39.9849593 88.8006289,39.9420659 87.3777115,39.9420659 L77.1368334,39.9420659 L70.5539254,39.9420659 L72.0805835,41.4739548 L72.0805835,30.8610405 L72.0805835,23.2935193 C72.0805835,20.6708796 72.190504,18.1770267 73.008794,15.6646636 C74.7187337,10.4684832 78.8833699,6.13631965 84.0130324,4.23667449 C89.374689,2.24526284 95.4019995,2.79669327 100.257303,5.82980382 C105.643347,9.16320262 108.910491,15.1375945 108.940976,21.4796798 C108.95319,23.4527382 112.012551,23.4527382 111.994261,21.4796798 C111.963728,15.1070056 109.111844,8.88758937 104.165557,4.87386348 C99.1275042,0.768371085 92.5506931,-0.855347079 86.1813322,0.431423291 C80.0441216,1.66918878 74.566468,5.77458705 71.586502,11.3078722 C70.0476188,14.1571831 69.1927741,17.3435986 69.0522332,20.5911918 C68.9423144,22.9931213 69.0400207,25.4319143 69.0400207,27.8340007 L69.0400207,41.4678371 C69.0400207,42.2950533 69.7422872,43 70.5666788,43 L86.9016204,43 C90.5167561,43 94.0768635,43.0487465 97.5394209,41.8354835 C101.47816,40.4567741 104.940717,37.96278 107.493277,34.6540091 C110.412274,30.8856214 111.963382,26.2469421 112,21.4797896 C112.012178,19.5006135 108.958872,19.5006135 108.940582,21.4797896 L108.940335,21.4790021 Z" ></path>
+                        <path d="M28.0012535,21.4924281 C28.0500729,29.8800345 33.0541025,37.7892984 40.7553856,41.1574436 C42.7814306,42.0451826 44.8744949,42.5961855 47.071447,42.8593835 C48.6458537,43.0430564 50.2324459,42.9940733 51.80076,42.9940733 L62.3884034,42.9940733 L69.4062146,42.9940733 C70.2300365,42.9940733 70.9318176,42.2900071 70.9318176,41.4635028 L70.9318176,29.9046052 C70.9318176,24.4557016 71.4932488,18.6886345 69.3940137,13.5278022 C66.9774133,7.60760912 62.0528226,3.00364141 55.9931218,1.02601197 C49.933421,-0.945348228 43.0682389,-0.0453842105 37.7463753,3.46270597 C31.7049525,7.43614561 28.0312325,14.2379496 28.0007692,21.493019 C27.9885635,23.4643792 31.0336659,23.4643792 31.0519439,21.493019 C31.0824556,15.8298645 33.6760073,10.4239052 38.1430233,6.93413681 C42.5856687,3.44436846 48.5353891,2.21998733 53.9964466,3.62805698 C59.4154804,5.02393297 63.943423,8.86255277 66.2745699,13.9440793 C68.4104391,18.5971037 67.8733473,23.862162 67.8733473,28.8518443 L67.8733473,41.4515913 L69.3989503,39.9210209 L53.8254771,39.9210209 C50.59121,39.9210209 47.3569429,40.1046937 44.2325,39.1679763 C40.6625116,38.1149333 37.5197907,35.9720782 35.1520878,33.0885447 C32.4792831,29.8315216 31.0756272,25.6682809 31.0512565,21.4683653 C31.0329488,19.5153426 27.9818038,19.5153426 28,21.4928529 L28.0012535,21.4924281 Z" ></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <style>#icon--gift.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'mail' %}
+    <svg id="icon--mail" class="{{ classes }} stroke" width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-270.000000, -644.000000)" stroke="{{ fill }}">
+                <g id="mail" transform="translate(271.000000, 645.000000)">
+                    <path d="M2,0 L18,0 C19.1,0 20,0.9 20,2 L20,14 C20,15.1 19.1,16 18,16 L2,16 C0.9,16 0,15.1 0,14 L0,2 C0,0.9 0.9,0 2,0 Z" ></path>
+                    <polyline  points="20 2 10 9 0 2"></polyline>
+                </g>
+            </g>
+        </g>
+        <style>#icon--mail.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'menu-bars' %}
+    <svg id="icon--menu-bars" class="{{ classes }} stroke" width="40px" height="17px" viewBox="0 0 40 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g class="icon-fill" transform="translate(-161.000000, -704.000000)" stroke="{{ fill }}">
+                <g id="Mobile-Menu-icon" transform="translate(161.000000, 704.000000)">
+                    <line x1="-7.07767178e-15" y1="8.5" x2="40" y2="8.5" id="Path-2"></line>
+                    <line x1="-7.07767178e-15" y1="0.5" x2="40" y2="0.5" id="Path-2-Copy-2"></line>
+                    <line x1="-7.07767178e-15" y1="16.5" x2="40" y2="16.5" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--menu-bars.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'right-arrow' %}
+    <svg id="icon--right-arrow" class="{{ classes }} stroke" width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="{{ fill }}" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-275.000000, -706.000000)" stroke="{{ fill }}">
+                <g id="Rt-Arrow" transform="translate(276.000000, 707.000000)">
+                    <polyline  points="4.54545455 0 10 6 4.54545455 12"></polyline>
+                    <line x1="0" y1="6" x2="10" y2="6" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--right-arrow.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'right-carrot' %}
+    <svg id="icon--right-carrot" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.41 97.5">
+      <defs><style>.cls-1{fill:{{ fill }};}</style></defs>
+      <path class="cls-1" d="M61.39,54.66,27,92.48a3.75,3.75,0,0,0,5.55,5l40.91-45,.17-.22.21-.28a3.65,3.65,0,0,0,.18-.34,2.59,2.59,0,0,0,.14-.29,2.8,2.8,0,0,0,.13-.41,1.19,1.19,0,0,0,.07-.27,3.45,3.45,0,0,0,0-1.43,2.5,2.5,0,0,0-.07-.26,2.8,2.8,0,0,0-.13-.41,2,2,0,0,0-.14-.29,3.65,3.65,0,0,0-.18-.34l-.21-.28-.17-.22-40.91-45a3.75,3.75,0,0,0-5.55,5L61.4,45.36,64,48.17a2.71,2.71,0,0,1,0,3.66C62.9,53,61.67,54.34,61.39,54.66Z" transform="translate(-26.03 -1.25)"/>
+      <style>#icon--right-carrot:hover .cls-1 { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'left-arrow' %}
+    <svg id="icon--left-arrow" class="{{ classes }} stroke" width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="{{ fill }}" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-247.000000, -706.000000)" stroke="{{ fill }}">
+                <g id="Rt-Arrow-Copy" transform="translate(253.000000, 713.000000) scale(-1, 1) translate(-253.000000, -713.000000) translate(248.000000, 707.000000)">
+                    <polyline  points="4.54545455 0 10 6 4.54545455 12"></polyline>
+                    <line x1="0" y1="6" x2="10" y2="6" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--left-arrow.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'left-carrot' %}
+    <svg id="icon--left-carrot" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.41 97.5">
+      <defs><style>.cls-1{fill:{{ fill }};}</style></defs>
+      <path class="cls-1" d="M39.07,45.34,73.46,7.52a3.75,3.75,0,0,0-5.55-5L27,47.48l-.17.22-.21.28a3.65,3.65,0,0,0-.18.34,2.59,2.59,0,0,0-.14.29,2.8,2.8,0,0,0-.13.41,2.5,2.5,0,0,0-.07.26,3.45,3.45,0,0,0,0,1.43,2.13,2.13,0,0,0,.07.27,2.8,2.8,0,0,0,.13.41,2.59,2.59,0,0,0,.14.29,3.65,3.65,0,0,0,.18.34l.21.28.17.22,40.91,45a3.74,3.74,0,0,0,5.3.25,3.75,3.75,0,0,0,.25-5.29L39.06,54.64l-2.57-2.81a2.71,2.71,0,0,1,0-3.66C37.56,47,38.79,45.66,39.07,45.34Z" transform="translate(-26.03 -1.25)"/>
+      <style>#icon--left-carrot:hover .cls-1 { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'search' %}
+    <svg id="icon--search" class="{{ classes }} stroke" width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g class="icon-fill" transform="translate(-362.000000, -702.000000)" stroke="{{ fill }}">
+                <g id="Search-Icon" transform="translate(363.000000, 703.000000)">
+                    <circle  cx="7.65447464" cy="7.37482255" r="7.36363636"></circle>
+                    <path d="M12.5635655,13.1020953 L17.4760522,18.0111862 L12.5635655,13.1020953 Z"  stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+      <style>#icon--search.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'up-carrot' %}
+    <svg id="icon--up-carrot" class="{{ classes }} stroke" width="14px" height="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 14 7.2" style="enable-background:new 0 0 14 7.2;" xml:space="preserve">
+       <style type="text/css">
+       	.st0{stroke-linecap:round;stroke-linejoin:round;}
+       </style>
+      <g >
+      	<g transform="translate(-218.000000, -710.000000)">
+      		<polyline class="icon-fill st0" fill="none" stroke="{{ fill }}" points="231,716.6 225,710.6 219,716.6 		"/>
+      	</g>
+      </g>
+      <style>#icon--up-carrot.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'down-carrot' %}
+    <svg id="icon--down-carrot" class="{{ classes }} stroke" width="14px" height="6px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 14 7.2" style="enable-background:new 0 0 14 7.2;" xml:space="preserve">
+      <style type="text/css">
+        .st0{stroke-linecap:round;stroke-linejoin:round;}
+      </style>
+      <g >
+        <g transform="translate(-218.000000, -710.000000)">
+          <polyline stroke="{{ fill }}" fill="none" class="icon-fill st0" points="219,710.6 225,716.6 231,710.6 		"/>
+        </g>
+      </g>
+      <style>#icon--down-carrot.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'smile' %}
+    <svg id="icon--smile" class="{{ classes }} stroke" width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-235.000000, -642.000000)" stroke="{{ fill }}">
+                <g id="smile" transform="translate(236.000000, 643.000000)">
+                    <circle  cx="10" cy="10" r="10"></circle>
+                    <path d="M6,12 C6,12 7.5,14 10,14 C12.5,14 14,12 14,12" ></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"  stroke-width="2"></line>
+                    <line x1="13" y1="7" x2="13.01" y2="7"  stroke-width="2"></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--smile.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'twitch' %}
+    <svg id="icon--twitch" class="{{ classes }} stroke" width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-201.000000, -642.000000)" stroke="{{ fill }}">
+                <g id="twitch" transform="translate(202.000000, 643.000000)">
+                    <path d="M18,0 L0,0 L0,16 L5,16 L5,20 L9,16 L14,16 L18,12 L18,0 Z M8,9 L8,5 M13,9 L13,5" ></path>
+                </g>
+            </g>
+        </g>
+        <style>#icon--twitch.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'video' %}
+    <svg id="icon--video" class="{{ classes }} stroke" width="24px" height="16px" viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g class="icon-fill" transform="translate(-294.000000, -601.000000)" stroke="{{ fill }}">
+                <g id="video" transform="translate(295.000000, 602.000000)">
+                    <polygon  points="22 2 15 7 22 12"></polygon>
+                    <rect  x="0" y="0" width="15" height="14" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+        <style>#icon--video.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'close' or icon == 'remove' %}
+    <svg id="icon--close" class="{{ classes }} stroke" width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+            <g class="icon-fill" transform="translate(-462.000000, -703.000000)" stroke="{{ fill }}" stroke-width="0.8">
+                <g id="X-Icon" transform="translate(472.485281, 713.485281) rotate(-315.000000) translate(-472.485281, -713.485281) translate(466.485281, 707.485281)">
+                    <line x1="6" y1="0" x2="6" y2="12" id="Path-2"></line>
+                    <line x1="0" y1="6" x2="12" y2="6" ></line>
+                </g>
+            </g>
+        </g>
+        <style>#icon--close.stroke:hover g { stroke: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'rough_circle_shape' %}
+    <svg class="icon--foodie-rough-circle {{ classes }}" height="{{ size }}" viewBox="0 0 473 489" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="hover-fill" fill="{{ fill }}">
+          <path d="M470.1,246.1c0,25.4-6.3,50.3-13.8,73.2c-7.7,23.7-26.4,41-40.8,60.8c-14.5,19.9-31.1,35.1-51,49.6
+            c-19.7,14.4-36.2,34.7-59.9,42.4c-22.9,7.4-48,15.4-73.4,15.4c-25.4,0-51.7-4.4-74.5-11.9c-23.7-7.7-47.4-20.1-67.1-34.5
+            c-19.9-14.5-39.7-32.7-54.2-52.7c-14.4-19.7-14-47.9-21.7-71.6c-7.4-22.9-11.4-45.3-11.4-70.7c0-25.4,2-48.4,9.4-71.3
+            c7.7-23.7,15.3-46.8,29.7-66.6c14.5-19.9,30-40.1,50-54.6c19.7-14.4,44.1-21.6,67.8-29.3c22.9-7.4,46.7-20.6,72.1-20.6
+            c25.4,0,50.9,7.9,73.8,15.3c23.7,7.7,48.2,17.6,68,32c19.9,14.5,35.9,35.5,50.4,55.5c14.4,19.7,23.8,43.2,31.5,66.9
+            C462.3,196.4,470.1,220.8,470.1,246.1z"/>
+        </g>
+        <style>{{ wrapper }} .icon--foodie-rough-circle:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'circle_shape' %}
+    <svg class="icon--foodie-circle {{ classes }}" height="{{ size }}" viewBox="0 0 471 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="hover-fill" fill="{{ fill }}">
+          <circle cx="234.5" cy="235.5" r="235.5"/>
+        </g>
+        <style>{{ wrapper }} .icon--foodie-circle:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'hexagon_shape' %}
+    <svg class="icon--foodie-hexagon {{ classes }}" height="{{ size }}" viewBox="0 0 404.05 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="hover-fill" fill="{{ fill }}">
+          <polygon points="404.05 118.39 201.01 1.17 -2.03 118.39 -2.03 352.84 201.01 470.07 404.05 352.84 404.05 118.39"/>
+        </g>
+        <style>{{ wrapper }} .icon--foodie-hexagon:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'square_shape' %}
+    <svg class="icon--foodie-square {{ classes }}" height="{{ size }}" viewBox="0 0 471 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="hover-fill" fill="{{ fill }}">
+          <rect width="471" height="471"/>
+        </g>
+        <style>{{ wrapper }} .icon--foodie-square:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% endif %}
+{% endif %}
+
+{% if type == 'material' %}
+
+  {% if icon == 'zoom' %}
+    <svg id="icon--material-zoom" class="{{ classes }}" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+          <g class="icon-fill" transform="translate(-961.000000, -761.000000)" fill="{{ fill }}" fill-rule="nonzero">
+              <g id="outline-zoom_in-24px" transform="translate(961.000000, 761.000000)">
+                  <path d="M12.5,11 L11.71,11 L11.43,10.73 C12.41,9.59 13,8.11 13,6.5 C13,2.91 10.09,0 6.5,0 C2.91,0 0,2.91 0,6.5 C0,10.09 2.91,13 6.5,13 C8.11,13 9.59,12.41 10.73,11.43 L11,11.71 L11,12.5 L16,17.49 L17.49,16 L12.5,11 Z M6.5,11 C4.01,11 2,8.99 2,6.5 C2,4.01 4.01,2 6.5,2 C8.99,2 11,4.01 11,6.5 C11,8.99 8.99,11 6.5,11 Z M7,4 L6,4 L6,6 L4,6 L4,7 L6,7 L6,9 L7,9 L7,7 L9,7 L9,6 L7,6 L7,4 Z" ></path>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-zoom:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'zoom-out' %}
+    <svg id="icon--material-zoom-out" class="{{ classes }}" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g class="icon-fill hover-fill" transform="translate(-1019.000000, -761.000000)" fill="{{ fill }}" fill-rule="nonzero">
+              <g id="outline-zoom_out-24px" transform="translate(1019.000000, 761.000000)">
+                  <path d="M12.5,11 L11.71,11 L11.43,10.73 C12.41,9.59 13,8.11 13,6.5 C13,2.91 10.09,0 6.5,0 C2.91,0 0,2.91 0,6.5 C0,10.09 2.91,13 6.5,13 C8.11,13 9.59,12.41 10.73,11.43 L11,11.71 L11,12.5 L16,17.49 L17.49,16 L12.5,11 Z M6.5,11 C4.01,11 2,8.99 2,6.5 C2,4.01 4.01,2 6.5,2 C8.99,2 11,4.01 11,6.5 C11,8.99 8.99,11 6.5,11 Z M4,6 L9,6 L9,7 L4,7 L4,6 Z" ></path>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-zoom-out:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'print' %}
+    <svg id="icon--print" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18">
+      <path class="icon-fill hover-fill" fill="{{ fill }}" d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <style>#icon--material-print:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'wish' %}
+    <svg id="icon--material-wish" class="{{ classes }}" width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-433.000000, -829.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M447.5,829 C445.76,829 444.09,829.79455 443,831.050136 C441.91,829.79455 440.24,829 438.5,829 C435.42,829 433,831.373842 433,834.395095 C433,838.102997 436.4,841.124251 441.55,845.714986 L443,847 L444.45,845.705177 C449.6,841.124251 453,838.102997 453,834.395095 C453,831.373842 450.58,829 447.5,829 Z M443.1,844.253406 L443,844.351499 L442.9,844.253406 C438.14,840.025613 435,837.229973 435,834.395095 C435,832.433243 436.5,830.961853 438.5,830.961853 C440.04,830.961853 441.54,831.93297 442.07,833.276839 L443.94,833.276839 C444.46,831.93297 445.96,830.961853 447.5,830.961853 C449.5,830.961853 451,832.433243 451,834.395095 C451,837.229973 447.86,840.025613 443.1,844.253406 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-wish:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'wish-focus' %}
+    <svg id="icon--material-wish-focus" class="{{ classes }}" width="19px" height="17px" viewBox="0 0 19 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-374.000000, -830.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <path d="M383.5,833.187314 C382.792753,831.346417 380.812065,830 378.750493,830 C376.065518,830 374,832.052392 374,834.780971 C374,838.530284 378.00379,841.430641 383.5,847 C388.99621,841.430641 393,838.530284 393,834.780971 C393,832.052392 390.934482,830 388.250493,830 C386.186948,830 384.207247,831.346417 383.5,833.187314 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-wish-focus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'up' %}
+    <svg id="icon--material-up" class="{{ classes }}" width="10px" height="5px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-325.000000, -768.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="325 773 330.000467 768 335 773"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-up:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'up-carrot' %}
+    <svg id="icon--material-up-carrot" class="{{ classes }}" width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-638.000000, -766.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="644.499494 766 638 772.486519 639.516549 774 644.499494 769.027063 649.483451 774 651 772.486519"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-up-carrot:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'share' %}
+    <svg id="icon--material-share" class="{{ classes }}" width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-965.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M980,842.136546 C979.24,842.136546 978.56,842.437751 978.04,842.909639 L970.91,838.742972 C970.96,838.512048 971,838.281124 971,838.040161 C971,837.799197 970.96,837.568273 970.91,837.337349 L977.96,833.210843 C978.5,833.712851 979.21,834.024096 980,834.024096 C981.66,834.024096 983,832.678715 983,831.012048 C983,829.345382 981.66,828 980,828 C978.34,828 977,829.345382 977,831.012048 C977,831.253012 977.04,831.483936 977.09,831.714859 L970.04,835.841365 C969.5,835.339357 968.79,835.028112 968,835.028112 C966.34,835.028112 965,836.373494 965,838.040161 C965,839.706827 966.34,841.052209 968,841.052209 C968.79,841.052209 969.5,840.740964 970.04,840.238956 L977.16,844.415663 C977.11,844.626506 977.08,844.84739 977.08,845.068273 C977.08,846.684739 978.39,848 980,848 C981.61,848 982.92,846.684739 982.92,845.068273 C982.92,843.451807 981.61,842.136546 980,842.136546 Z M980,830.008032 C980.55,830.008032 981,830.459839 981,831.012048 C981,831.564257 980.55,832.016064 980,832.016064 C979.45,832.016064 979,831.564257 979,831.012048 C979,830.459839 979.45,830.008032 980,830.008032 Z M968,839.044177 C967.45,839.044177 967,838.592369 967,838.040161 C967,837.487952 967.45,837.036145 968,837.036145 C968.55,837.036145 969,837.487952 969,838.040161 C969,838.592369 968.55,839.044177 968,839.044177 Z M980,846.092369 C979.45,846.092369 979,845.640562 979,845.088353 C979,844.536145 979.45,844.084337 980,844.084337 C980.55,844.084337 981,844.536145 981,845.088353 C981,845.640562 980.55,846.092369 980,846.092369 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-share:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'secure' %}
+    <svg id="icon--material-secure" class="{{ classes }}" width="18px" height="22px" viewBox="0 0 18 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-613.000000, -827.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <g id="Shield" transform="translate(613.000000, 827.000000)">
+                  <path d="M9,0 L0,4 L0,10 C0,15.55 3.84,20.74 9,22 C14.16,20.74 18,15.55 18,10 L18,4 L9,0 Z M16,10 C16,14.52 13.02,18.69 9,19.93 C4.98,18.69 2,14.52 2,10 L2,5.3 L9,2.19 L16,5.3 L16,10 Z" ></path>
+                  <polygon  points="4.41 10.59 3 12 7 16 15 8 13.59 6.58 7 13.17"></polygon>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-secure:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'search' %}
+    <svg id="icon--material-search" class="{{ classes }}" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-1023.000000, -829.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M1035.86449,840.320755 L1035.05146,840.320755 L1034.76329,840.042882 C1035.77187,838.86964 1036.37907,837.346484 1036.37907,835.689537 C1036.37907,831.994854 1033.38422,829 1029.68954,829 C1025.99485,829 1023,831.994854 1023,835.689537 C1023,839.38422 1025.99485,842.379074 1029.68954,842.379074 C1031.34648,842.379074 1032.86964,841.77187 1034.04288,840.763293 L1034.32075,841.051458 L1034.32075,841.864494 L1039.46655,847 L1041,845.466552 L1035.86449,840.320755 Z M1029.68954,840.320755 C1027.12693,840.320755 1025.05832,838.252144 1025.05832,835.689537 C1025.05832,833.12693 1027.12693,831.058319 1029.68954,831.058319 C1032.25214,831.058319 1034.32075,833.12693 1034.32075,835.689537 C1034.32075,838.252144 1032.25214,840.320755 1029.68954,840.320755 Z" id="Search"></path>
+          </g>
+      </g>
+      <style>#icon--material-search:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'right-carrot' %}
+    <svg id="icon--material-right-carrot" class="{{ classes }}" width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-537.000000, -764.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="537 765.399974 538.513322 764 545 769.999953 538.513322 776 537 774.600026 541.972345 769.999953"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-right-carrot:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'right-arrow' %}
+    <svg id="icon--material-right-arrow" class="{{ classes }}" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g transform="translate(-375.000000, -762.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon id="Right-Arrow" points="383 762 381.600164 763.399954 387.199509 768.999959 375 768.999959 375 770.999947 387.199509 770.999947 381.600164 776.599859 383 778 391 769.999953"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-right-arrow:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'remove' %}
+    <svg id="icon--material-remove" class="{{ classes }}" width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-911.000000, -829.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M922,835 L922,845 L914,845 L914,835 L922,835 Z M920.5,829 L915.5,829 L914.5,830 L911,830 L911,832 L925,832 L925,830 L921.5,830 L920.5,829 Z M924,833 L912,833 L912,845 C912,846.1 912.9,847 914,847 L922,847 C923.1,847 924,846.1 924,845 L924,833 Z" id="Delete"></path>
+          </g>
+      </g>
+      <style>#icon--material-remove:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'plus' %}
+    <svg id="icon--material-plus" class="{{ classes }}" width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-853.000000, -763.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <polygon id="Plus" points="867 771 861 771 861 777 859 777 859 771 853 771 853 769 859 769 859 763 861 763 861 769 867 769"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-plus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'minus' %}
+    <svg id="icon--material-minus" class="{{ classes }}" width="14px" height="2px" viewBox="0 0 14 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-907.000000, -769.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <polygon id="Minus" points="907 769 907 771 921 771 921 769"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-minus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'menu-dots' %}
+    <svg id="icon--material-menu-dots" class="{{ classes }}" width="5px" height="18px" viewBox="0 0 5 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-220.000000, -829.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="Mobile-Menu" transform="translate(220.000000, 829.000000)">
+                  <path d="M2.1402,4.281 C3.3174,4.281 4.2805,3.318 4.2805,2.14 C4.2805,0.963 3.3174,-4.8316906e-13 2.1402,-4.8316906e-13 C0.9631,-4.8316906e-13 -7.86037901e-14,0.963 -7.86037901e-14,2.14 C-7.86037901e-14,3.318 0.9631,4.281 2.1402,4.281 Z" ></path>
+                  <path d="M2.1402,6.421 C0.9631,6.421 -7.86037901e-14,7.384 -7.86037901e-14,8.561 C-7.86037901e-14,9.738 0.9631,10.701 2.1402,10.701 C3.3174,10.701 4.2805,9.738 4.2805,8.561 C4.2805,7.384 3.3174,6.421 2.1402,6.421 Z" ></path>
+                  <path d="M2.1402,12.841 C0.9631,12.841 -7.86037901e-14,13.804 -7.86037901e-14,14.982 C-7.86037901e-14,16.159 0.9631,17.122 2.1402,17.122 C3.3174,17.122 4.2805,16.159 4.2805,14.982 C4.2805,13.804 3.3174,12.841 2.1402,12.841 Z" ></path>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-menu-dots:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'menu-bars' %}
+    <svg id="icon--material-menu-bars" class="{{ classes }}" width="20px" height="13px" viewBox="0 0 20 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-160.000000, -832.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="Hamburger-Menu" transform="translate(160.000000, 832.000000)">
+                  <polygon  points="3.55271368e-14 12.841 19.26213 12.841 19.26213 10.701 3.55271368e-14 10.701"></polygon>
+                  <polygon  points="3.55271368e-14 7.49 19.26213 7.49 19.26213 5.35 3.55271368e-14 5.35"></polygon>
+                  <polygon  points="3.55271368e-14 -2.98427949e-13 3.55271368e-14 2.14 19.26213 2.14 19.26213 -2.98427949e-13"></polygon>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-menu-bars:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'left-carrot' %}
+    <svg id="icon--material-left-carrot" class="{{ classes }}" width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-489.000000, -764.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="497 765.399974 495.486678 764 489 769.999953 495.486678 776 497 774.600026 492.026645 769.999953"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-left-carrot:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'left-arrow' %}
+    <svg id="icon--material-left-arrow" class="{{ classes }}" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-219.000000, -762.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon id="Left-Arrow" points="235 768.999959 222.799974 768.999959 228.40004 763.399954 227 762 219 769.999953 227 778 228.40004 776.599859 222.799974 770.999947 235 770.999947"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-left-arrow:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'grid' %}
+    <svg id="icon--material-grid" class="{{ classes }}" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-161.000000, -761.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="Group-2" transform="translate(161.000000, 761.000000)">
+                  <polygon  points="0.00049 4.2804 4.281 4.2804 4.281 -1.77635684e-13 0.00049 -1.77635684e-13"></polygon>
+                  <polygon  points="6.4209 17.1217 10.7014 17.1217 10.7014 12.841 6.4209 12.841"></polygon>
+                  <polygon  points="-7.59392549e-14 17.1217 4.2805 17.1217 4.2805 12.841 -7.59392549e-14 12.841"></polygon>
+                  <polygon  points="-7.59392549e-14 10.7008 4.2805 10.7008 4.2805 6.4204 -7.59392549e-14 6.4204"></polygon>
+                  <polygon  points="6.4209 10.7008 10.7014 10.7008 10.7014 6.4204 6.4209 6.4204"></polygon>
+                  <polygon  points="12.8418 -1.77635684e-13 12.8418 4.2804 17.1223 4.2804 17.1223 -1.77635684e-13"></polygon>
+                  <polygon  points="6.4209 4.2804 10.7014 4.2804 10.7014 -1.77635684e-13 6.4209 -1.77635684e-13"></polygon>
+                  <polygon  points="12.8418 10.7008 17.1223 10.7008 17.1223 6.4204 12.8418 6.4204"></polygon>
+                  <polygon  points="12.8418 17.1217 17.1223 17.1217 17.1223 12.841 12.8418 12.841"></polygon>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-grid:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'fullscreen' %}
+    <svg id="icon--material-fullscreen" class="{{ classes }}" width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-743.000000, -763.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="Group-4" transform="translate(743.000000, 763.000000)">
+                  <polygon  points="2.141 9.3505 5.68434189e-14 9.3505 5.68434189e-14 14.7011 5.351 14.7011 5.351 12.5608 2.141 12.5608"></polygon>
+                  <polygon  points="5.68434189e-14 5.3505 2.141 5.3505 2.141 2.1402 5.351 2.1402 5.351 2.34479103e-13 5.68434189e-14 2.34479103e-13"></polygon>
+                  <polygon  points="12.562 12.5608 9.351 12.5608 9.351 14.7011 14.702 14.7011 14.702 9.3505 12.562 9.3505"></polygon>
+                  <polygon  points="9.351 2.34479103e-13 9.351 2.1402 12.562 2.1402 12.562 5.3505 14.702 5.3505 14.702 2.34479103e-13"></polygon>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-fullscreen:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'fullscreen-close' %}
+    <svg id="icon--material-fullscreen-close" class="{{ classes }}" width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-798.000000, -763.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="Group-3" transform="translate(798.000000, 763.000000)">
+                  <polygon  points="5.68434189e-14 11.4907 3.211 11.4907 3.211 14.7011 5.351 14.7011 5.351 9.3505 5.68434189e-14 9.3505"></polygon>
+                  <polygon  points="3.211 3.2103 5.68434189e-14 3.2103 5.68434189e-14 5.3505 5.351 5.3505 5.351 2.34479103e-13 3.211 2.34479103e-13"></polygon>
+                  <polygon  points="9.351 14.7011 11.491 14.7011 11.491 11.4907 14.702 11.4907 14.702 9.3505 9.351 9.3505"></polygon>
+                  <polygon  points="11.491 3.2103 11.491 2.34479103e-13 9.351 2.34479103e-13 9.351 5.3505 14.702 5.3505 14.702 3.2103"></polygon>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-fullscreen-close:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'forward' %}
+    <svg id="icon--material-forward" class="{{ classes }}" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-264.000000, -830.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <path d="M272.000467,830 C267.59979,830 264,833.600514 264,838 C264,842.399486 267.59979,846 272.000467,846 C275.700251,846 278.80007,843.400304 280,839.999766 L278.000117,839.999766 C276.800187,842.299498 274.600315,844.000234 272.000467,844.000234 C268.699725,844.000234 265.999883,841.299615 265.999883,838 C265.999883,834.700385 268.699725,831.999766 272.000467,831.999766 C273.700368,831.999766 275.100286,832.700619 276.000234,834.000467 L273.000409,837.000117 L280,837.000117 L280,830 L278.000117,831.999766 C276.200222,830.999883 274.200339,830 272.000467,830 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-forward:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'down' %}
+    <svg id="icon--material-down" class="{{ classes }}" width="10px" height="5px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-275.000000, -768.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="275 768 280.000467 773 285 768"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-down:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'down-carrot' %}
+    <svg id="icon--material-down-carrot" class="{{ classes }}" width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-688.000000, -769.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="698.600218 769 694 773.973039 689.400716 769 688 770.513582 694 777 700 770.513582"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-down-carrot:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'close' %}
+    <svg id="icon--material-close" class="{{ classes }}" width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-584.000000, -763.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon  points="598 764.399963 596.600187 763 591 768.599944 585.400748 763 584 764.399963 589.600187 770 584 775.599944 585.400748 777 591 771.399963 596.600187 777 598 775.599944 592.399813 770"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-close:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'circle-plus' %}
+    <svg id="icon--material-circle-plus" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-671.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M682,833 L680,833 L680,837 L676,837 L676,839 L680,839 L680,843 L682,843 L682,839 L686,839 L686,837 L682,837 L682,833 Z M681,828 C675.48,828 671,832.48 671,838 C671,843.52 675.48,848 681,848 C686.52,848 691,843.52 691,838 C691,832.48 686.52,828 681,828 Z M681,846 C676.59,846 673,842.41 673,838 C673,833.59 676.59,830 681,830 C685.41,830 689,833.59 689,838 C689,842.41 685.41,846 681,846 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-circle-plus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'circle-plus-focus' %}
+    <svg id="icon--material-circle-plus-focus" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-731.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M741,828 C735.48,828 731,832.48 731,838 C731,843.52 735.48,848 741,848 C746.52,848 751,843.52 751,838 C751,832.48 746.52,828 741,828 Z M746,839 L742,839 L742,843 L740,843 L740,839 L736,839 L736,837 L740,837 L740,833 L742,833 L742,837 L746,837 L746,839 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-circle-plus-focus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'circle-minus' %}
+    <svg id="icon--material-circle-minus" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-791.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M796,837 L796,839 L806,839 L806,837 L796,837 Z M801,828 C795.48,828 791,832.48 791,838 C791,843.52 795.48,848 801,848 C806.52,848 811,843.52 811,838 C811,832.48 806.52,828 801,828 Z M801,846 C796.59,846 793,842.41 793,838 C793,833.59 796.59,830 801,830 C805.41,830 809,833.59 809,838 C809,842.41 805.41,846 801,846 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-circle-minus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'circle-minus-focus' %}
+    <svg id="icon--material-circle-minus-focus" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-851.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M861,828 C855.48,828 851,832.48 851,838 C851,843.52 855.48,848 861,848 C866.52,848 871,843.52 871,838 C871,832.48 866.52,828 861,828 Z M866,839 L856,839 L856,837 L866,837 L866,839 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-circle-minus-focus:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'checkmark' %}
+    <svg id="icon--material-checkmark" class="{{ classes }}" width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-431.000000, -763.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <polygon id="Checkmark" points="436.72762 774.074599 432.431666 769.686547 431 771.149198 436.72762 777 449 764.462652 447.568334 763"></polygon>
+          </g>
+      </g>
+      <style>#icon--material-checkmark:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'cart' %}
+    <svg id="icon--material-cart" class="{{ classes }}" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-552.000000, -828.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <g id="Shopping-Cart" transform="translate(552.000000, 828.000000)">
+                  <path d="M14.55,11 C15.3,11 15.96,10.59 16.3,9.97 L19.88,3.48 C20.25,2.82 19.77,2 19.01,2 L4.21,2 L3.27,0 L8.70414851e-14,0 L8.70414851e-14,2 L2,2 L5.6,9.59 L4.25,12.03 C3.52,13.37 4.48,15 6,15 L18,15 L18,13 L6,13 L7.1,11 L14.55,11 Z M5.16,4 L17.31,4 L14.55,9 L7.53,9 L5.16,4 Z" ></path>
+                  <path d="M6,16 C4.9,16 4.01,16.9 4.01,18 C4.01,19.1 4.9,20 6,20 C7.1,20 8,19.1 8,18 C8,16.9 7.1,16 6,16 Z" ></path>
+                  <path d="M16,16 C14.9,16 14.01,16.9 14.01,18 C14.01,19.1 14.9,20 16,20 C17.1,20 18,19.1 18,18 C18,16.9 17.1,16 16,16 Z" ></path>
+              </g>
+          </g>
+      </g>
+      <style>#icon--material-cart:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'bag' %}
+    <svg id="icon--material-bag" class="{{ classes }}" width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-493.000000, -829.000000)" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="nonzero">
+              <path d="M507,833 L507,831 C507,829.89 506.11,829 505,829 L501,829 C499.89,829 499,829.89 499,831 L499,833 L493,833 L493,846 C493,847.11 493.89,848 495,848 L511,848 C512.11,848 513,847.11 513,846 L513,833 L507,833 Z M501,831 L505,831 L505,833 L501,833 L501,831 Z M511,846 L495,846 L495,835 L511,835 L511,846 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-bag:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'forward' %}
+    <svg id="icon--material-forward" class="{{ classes }}" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="{{ fill }}" fill-rule="evenodd">
+          <g  transform="translate(-264.000000, -830.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <path d="M272.000467,830 C267.59979,830 264,833.600514 264,838 C264,842.399486 267.59979,846 272.000467,846 C275.700251,846 278.80007,843.400304 280,839.999766 L278.000117,839.999766 C276.800187,842.299498 274.600315,844.000234 272.000467,844.000234 C268.699725,844.000234 265.999883,841.299615 265.999883,838 C265.999883,834.700385 268.699725,831.999766 272.000467,831.999766 C273.700368,831.999766 275.100286,832.700619 276.000234,834.000467 L273.000409,837.000117 L280,837.000117 L280,830 L278.000117,831.999766 C276.200222,830.999883 274.200339,830 272.000467,830 Z" ></path>
+          </g>
+      </g>
+      <style>#icon--material-forward:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'user-circle' %}
+    <svg id="icon--material-user-circle" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/><path d="M0 0h24v24H0z" fill="none"/>
+      </g>
+      <style>#icon--material-user-circle:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'user-square' %}
+    <svg id="icon--material-user-square" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"/><path d="M0 0h24v24H0z" fill="none"/>
+      </g>
+      <style>#icon--material-user-square:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'error' %}
+    <svg id="icon--material-error" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+      </g>
+      <style>#icon--material-error:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'ship-truck' %}
+    <svg id="icon--material-ship-truck" class="{{ classes }}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+      <g class="icon-fill hover-fill" fill="{{ fill }}">
+        <g data-name="np shipping-truck 2222988 000000">
+          <path d="M24,8.89A.89.89,0,0,0,23.11,8h-.83L21,3.32a.87.87,0,0,0-.85-.65H16.45V.89a.92.92,0,0,0-.26-.63A.89.89,0,0,0,15.56,0H.85A.94.94,0,0,0,.22.32,1,1,0,0,0,0,1V14.22H2.27a2.22,2.22,0,0,0,4.35,0h11.2a2.22,2.22,0,0,0,4.36,0H24ZM20.12,3.56,21.33,8H20V3.56Zm-1,0V8H16.45V3.56ZM4.45,15.11a1.34,1.34,0,0,1-1-2.28A1.36,1.36,0,0,1,5,12.54a1.34,1.34,0,0,1-.51,2.57Zm11.11-1.78H6.63a2.22,2.22,0,0,0-4.36,0H.89V1a.21.21,0,0,1,0-.11H15.56ZM20,15.11a1.34,1.34,0,1,1,1.33-1.33A1.33,1.33,0,0,1,20,15.11Zm3.11-1.78h-.93a2.22,2.22,0,0,0-4.36,0H16.45V8.89h6.66ZM2.23,8H13.78v.89H2.23Zm0-1.78H13.78v.89H2.23Z"/>
+        </g>
+      </g>
+      <style>#icon--material-ship-truck:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'sale-tag' %}
+    <svg id="icon--material-sale-tag" class="{{ classes }}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24.03 24">
+      <g class="icon-fill hover-fill" fill="{{ fill }}">
+        <g data-name="np sale-tag 629395 000000">
+          <path d="M2,1.52c-.23.07-.46.23-.46.46L0,10.82a.75.75,0,0,0,.15.54L12.62,23.84a.61.61,0,0,0,.85,0L23.86,13.45a.55.55,0,0,0,.15-.38.58.58,0,0,0-.15-.39L11.38.2A.48.48,0,0,0,10.84,0Zm5.12,3.1a1.65,1.65,0,0,1,0,2.4A1.64,1.64,0,0,1,4.71,7a1.65,1.65,0,0,1,0-2.4A1.64,1.64,0,0,1,7.12,4.62Z" transform="translate(0.01 -0.01)"/>
+        </g>
+      </g>
+      <style>#icon--material-sale-tag:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% endif %}
+{% endif %}
+
+{% if type == 'social' %}
+  {% if icon == 'facebook' %}
+    <svg id="icon--facebook" class="{{ classes }}" width="11" height="20" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g  transform="translate(-194.000000, -598.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+                <g id="facebook" transform="translate(195.000000, 599.000000)">
+                    <path class="st0" d="M10-1H7C4.2-1,2,1.2,2,4v3h-3v4h3v8h4v-8h3l1-4H6V4c0-0.6,0.4-1,1-1h3V-1z"/>
+                </g>
+            </g>
+        </g>
+        <style>#icon--facebook:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'instagram' %}
+    <svg id="icon--instagram" class="{{ classes }}" width="20" height="20" viewBox="0 0 15.7 15.6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-673.000000, -706.000000)" fill-rule="nonzero">
+                <g id="ant-design:instagram-outlined" transform="translate(673.000000, 706.000000)">
+                    <g  class="icon-fill hover-fill" transform="translate(2.000000, 2.000000)" fill="{{ fill }}">
+                      <path class="st0" d="M5.9,1.8c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S8.1,1.8,5.9,1.8z M5.9,8.4c-1.4,0-2.6-1.2-2.6-2.6
+                        s1.2-2.6,2.6-2.6s2.6,1.2,2.6,2.6S7.3,8.4,5.9,8.4z M10,0.7c-0.5,0-0.9,0.4-0.9,0.9S9.5,2.6,10,2.6S11,2.2,11,1.7
+                        c0-0.2-0.1-0.5-0.3-0.7C10.5,0.8,10.3,0.7,10,0.7z M13.7,5.8c0-1.1,0-2.1-0.1-3.2c-0.1-1.2-0.3-2.4-1.3-3.3
+                        c-0.9-0.9-2-1.2-3.3-1.3C8-2,6.9-2,5.9-2C4.8-2,3.7-2,2.6-1.9C1.4-1.9,0.3-1.6-0.6-0.7c-0.9,0.9-1.2,2-1.3,3.3
+                        C-2,3.7-2,4.8-2,5.8S-2,8-1.9,9.1c0.1,1.2,0.3,2.4,1.3,3.3c0.9,0.9,2,1.2,3.3,1.3c1.1,0.1,2.1,0.1,3.2,0.1c1.1,0,2.1,0,3.2-0.1
+                        c1.2-0.1,2.4-0.3,3.3-1.3c0.9-0.9,1.2-2,1.3-3.3C13.7,8,13.7,6.9,13.7,5.8z M11.9,10.4c-0.1,0.4-0.3,0.6-0.6,0.9
+                        c-0.3,0.3-0.5,0.4-0.9,0.6c-1,0.4-3.5,0.3-4.6,0.3s-3.6,0.1-4.6-0.3c-0.4-0.1-0.6-0.3-0.9-0.6c-0.3-0.3-0.4-0.5-0.6-0.9
+                        c-0.4-1-0.3-3.5-0.3-4.6s-0.1-3.6,0.3-4.6c0.1-0.4,0.3-0.6,0.6-0.9s0.5-0.4,0.9-0.6c1-0.4,3.5-0.3,4.6-0.3s3.6-0.1,4.6,0.3
+                        c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.4,0.5,0.6,0.9c0.4,1,0.3,3.5,0.3,4.6S12.4,9.4,11.9,10.4z"/>
+                    </g>
+                    <rect x="-2.1" y="-2.2" class="st0" width="20" height="20"/>
+                </g>
+            </g>
+        </g>
+        <style>#icon--instagram:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'twitter' %}
+    <svg id="icon--twitter" class="{{ classes }}" height="20" viewBox="0 0 22 17.9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g  class="icon-fill hover-fill" transform="translate(-164.000000, -643.000000)" fill="{{ fill }}">
+                <g id="twitter" transform="translate(165.000000, 643.000000)">
+                  <path class="st0" d="M21,0c-1,0.7-2,1.2-3.1,1.5c-1.2-1.4-3.2-1.9-5-1.2S10,2.7,10,4.5v1C6.4,5.6,3.1,3.9,1,1c0,0-4,9,5,13
+                    c-2.1,1.4-4.5,2.1-7,2c9,5,20,0,20-11.5c0-0.3,0-0.6-0.1-0.8C19.9,2.7,20.7,1.4,21,0z"/>
+                </g>
+            </g>
+        </g>
+        <style>#icon--twitter:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'youtube' %}
+    <svg id="icon--youtube" class="{{ classes }}" height="20" viewBox="0 0 17.6 12.3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-635.000000, -595.000000)" fill-rule="nonzero">
+                <g id="youtube-dark" transform="translate(635.000000, 595.000000)">
+                    <g  class="icon-fill hover-fill" transform="translate(1.000000, 4.000000)" fill="{{ fill }}">
+                      <path class="st0" d="M16.2-2c-0.2-0.8-0.8-1.3-1.5-1.5C13.3-4,7.8-4,7.8-4S2.4-4,1-3.6C0.2-3.4-0.4-2.8-0.6-2.1
+                        c-0.4,1.4-0.4,4.2-0.4,4.2s0,2.9,0.4,4.2C-0.4,7.1,0.2,7.7,1,7.9c1.4,0.4,6.8,0.4,6.8,0.4s5.5,0,6.8-0.4
+                        c0.8-0.2,1.3-0.8,1.5-1.5c0.4-1.4,0.4-4.2,0.4-4.2S16.6-0.7,16.2-2z M6.1,4.8v-5.2l4.5,2.6L6.1,4.8z"/>
+                    </g>
+                    <rect x="-1.2" y="-3.8" class="st0" width="20" height="20"/>
+                </g>
+            </g>
+        </g>
+        <style>#icon--youtube:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'pinterest' %}
+    <svg id="icon--pinterest" class="{{ classes }}" height="20" viewBox="0 0 11.6 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-646.000000, -706.000000)" fill-rule="nonzero">
+                <g id="bx-bxl-pinterest-alt" transform="translate(646.000000, 706.000000)">
+                    <g  class="icon-fill hover-fill" fill="{{ fill }}">
+                      <path class="st0" d="M0,5.4c0-0.6,0.1-1.3,0.3-1.8C0.6,3,0.9,2.5,1.3,2.1C1.7,1.7,2.2,1.3,2.7,1
+                        c0.5-0.3,1.1-0.6,1.7-0.7C4.9,0.1,5.5,0,6.1,0C7.1,0,8,0.2,8.8,0.6c0.8,0.4,1.5,1,2,1.7C11.3,3.1,11.6,4,11.6,5
+                        c0,0.6-0.1,1.1-0.2,1.7c-0.1,0.6-0.3,1.1-0.5,1.6c-0.2,0.5-0.5,0.9-0.9,1.3c-0.4,0.4-0.8,0.7-1.3,0.9c-0.5,0.2-1.1,0.4-1.7,0.3
+                        c-0.4,0-0.8-0.1-1.2-0.3C5.3,10.4,5,10.1,4.9,9.8c-0.1,0.2-0.1,0.6-0.3,1c-0.1,0.4-0.2,0.7-0.2,0.9c0,0.1-0.1,0.3-0.2,0.6
+                        c-0.1,0.2-0.1,0.4-0.2,0.6l-0.3,0.6c-0.1,0.2-0.3,0.5-0.4,0.7c-0.2,0.2-0.3,0.5-0.6,0.8l-0.1,0l-0.1-0.1
+                        c-0.1-0.9-0.1-1.5-0.1-1.7c0-0.6,0.1-1.2,0.2-1.9c0.1-0.7,0.3-1.6,0.6-2.6c0.3-1,0.4-1.6,0.5-1.8C3.4,6.6,3.3,6.1,3.3,5.4
+                        c0-0.5,0.2-1,0.5-1.4C4.1,3.6,4.5,3.4,5,3.4c0.4,0,0.7,0.1,0.9,0.4C6.1,4,6.2,4.3,6.2,4.7c0,0.4-0.1,1-0.4,1.7
+                        C5.5,7.1,5.4,7.7,5.4,8.1c0,0.4,0.1,0.7,0.4,0.9c0.3,0.2,0.6,0.4,1,0.4c0.3,0,0.6-0.1,0.9-0.2C8,9,8.2,8.8,8.4,8.6
+                        C8.8,8,9.1,7.4,9.2,6.7c0.1-0.4,0.1-0.7,0.2-1c0-0.3,0.1-0.6,0.1-0.9c0-1-0.3-1.8-1-2.4C7.8,1.8,7,1.5,5.9,1.5
+                        c-1.2,0-2.2,0.4-3,1.2c-0.8,0.8-1.2,1.8-1.2,3c0,0.3,0,0.5,0.1,0.8C1.9,6.6,2,6.8,2.1,7c0.1,0.1,0.2,0.3,0.2,0.4
+                        c0.1,0.1,0.1,0.2,0.1,0.3c0,0.2,0,0.4-0.1,0.7C2.2,8.6,2.1,8.7,1.9,8.7c0,0-0.1,0-0.2,0C1.5,8.6,1.2,8.4,1,8.2
+                        C0.7,8,0.5,7.7,0.4,7.4C0.3,7,0.2,6.7,0.1,6.4C0.1,6.1,0,5.7,0,5.4L0,5.4z"/>
+                    </g>
+                    <rect x="-4.2" y="-2.5" class="st0" width="20" height="20"/>
+                </g>
+            </g>
+        </g>
+        <style>#icon--pinterest:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'vimeo' %}
+    <svg id="icon--vimeo" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path d="M22.875 10.063c-2.442 5.217-8.337 12.319-12.063 12.319-3.672 0-4.203-7.831-6.208-13.043-.987-2.565-1.624-1.976-3.474-.681l-1.128-1.455c2.698-2.372 5.398-5.127 7.057-5.28 1.868-.179 3.018 1.098 3.448 3.832.568 3.593 1.362 9.17 2.748 9.17 1.08 0 3.741-4.424 3.878-6.006.243-2.316-1.703-2.386-3.392-1.663 2.673-8.754 13.793-7.142 9.134 2.807z"/>
+      </g>
+      <style>#icon--vimeo:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'tumblr' %}
+    <svg id="icon--tumblr" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path d="M19.512 17.489l-.096-.068h-3.274c-.153 0-.16-.467-.163-.622v-5.714c0-.056.045-.101.101-.101h3.82c.056 0 .101-.045.101-.101v-5.766c0-.055-.045-.1-.101-.1h-3.803c-.055 0-.1-.045-.1-.101v-4.816c0-.055-.045-.1-.101-.1h-7.15c-.489 0-1.053.362-1.135 1.034-.341 2.778-1.882 4.125-4.276 4.925l-.267.089-.068.096v4.74c0 .056.045.101.1.101h2.9v6.156c0 4.66 3.04 6.859 9.008 6.859 2.401 0 5.048-.855 5.835-1.891l.157-.208-1.488-4.412zm.339 4.258c-.75.721-2.554 1.256-4.028 1.281l-.165.001c-4.849 0-5.682-3.701-5.682-5.889v-7.039c0-.056-.045-.101-.1-.101h-2.782c-.056 0-.101-.045-.101-.101l-.024-3.06.064-.092c2.506-.976 3.905-2.595 4.273-5.593.021-.167.158-.171.159-.171h3.447c.055 0 .101.045.101.101v4.816c0 .056.045.101.1.101h3.803c.056 0 .101.045.101.1v3.801c0 .056-.045.101-.101.101h-3.819c-.056 0-.097.045-.097.101v6.705c.023 1.438.715 2.167 2.065 2.167.544 0 1.116-.126 1.685-.344.053-.021.111.007.13.061l.995 2.95-.024.104z" fill-rule="evenodd" clip-rule="evenodd"/>
+      </g>
+      <style>#icon--tumblr:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'snapchat' %}
+    <svg id="icon--snapchat" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" fill-rule="evenodd">
+          <path  d="M5.829 4.533c-.6 1.344-.363 3.752-.267 5.436-.648.359-1.48-.271-1.951-.271-.49 0-1.075.322-1.167.802-.066.346.089.85 1.201 1.289.43.17 1.453.37 1.69.928.333.784-1.71 4.403-4.918 4.931-.251.041-.43.265-.416.519.056.975 2.242 1.357 3.211 1.507.099.134.179.7.306 1.131.057.193.204.424.582.424.493 0 1.312-.38 2.738-.144 1.398.233 2.712 2.215 5.235 2.215 2.345 0 3.744-1.991 5.09-2.215.779-.129 1.448-.088 2.196.058.515.101.977.157 1.124-.349.129-.437.208-.992.305-1.123.96-.149 3.156-.53 3.211-1.505.014-.254-.165-.477-.416-.519-3.154-.52-5.259-4.128-4.918-4.931.236-.557 1.252-.755 1.69-.928.814-.321 1.222-.716 1.213-1.173-.011-.585-.715-.934-1.233-.934-.527 0-1.284.624-1.897.286.096-1.698.332-4.095-.267-5.438-1.135-2.543-3.66-3.829-6.184-3.829-2.508 0-5.014 1.268-6.158 3.833z" class="icon-fill hover-fill" fill="{{ fill }}"/>
+      </g>
+      <style>#icon--snapchat:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'linkedin' %}
+    <svg id="icon--linkedin" class="{{ classes }}" width="22" height="20" viewBox="0 0 21.1 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g  transform="translate(-258.000000, -598.000000)" class="icon-fill hover-fill" fill="{{ fill }}">
+              <g id="linkedin" transform="translate(259.000000, 599.000000)">
+                <path class="st0" d="M13.7,5.3c3.5,0,6.3,2.8,6.3,6.3V19h-4.2v-7.4c0-1.2-0.9-2.1-2.1-2.1s-2.1,0.9-2.1,2.1V19H7.4v-7.4
+                  C7.4,8.1,10.2,5.3,13.7,5.3z"/>
+                <rect x="-1" y="6.4" class="st0" width="4.2" height="12.6"/>
+                <circle class="st0" cx="1.1" cy="1.1" r="2.1"/>
+              </g>
+          </g>
+      </g>
+      <style>#icon--linkedin:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'flickr' %}
+    <svg id="icon--flickr" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+      <g  stroke="none" stroke-width="1" class="icon-fill hover-fill" fill="{{ fill }}" fill-rule="evenodd">
+        <path d="M17 5c-1.961 0-3.731.809-5.002 2.108-1.27-1.299-3.038-2.108-4.998-2.108-3.866 0-7 3.134-7 7s3.134 7 7 7c1.96 0 3.728-.809 4.998-2.108 1.271 1.299 3.041 2.108 5.002 2.108 3.866 0 7-3.134 7-7s-3.134-7-7-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/>
+      </g>
+      <style>#icon--flickr:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'tiktok' %}
+    <svg id="icon--tiktok" class="{{ classes }}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 15.7 20">
+      <g class="icon-fill hover-fill" fill="{{ fill }}">
+        <g data-name="np tiktok 3861486 000000-copy">
+          <path d="M11.9,0c0.1,0,0.2,0,0.3,0.1c0.1,0.1,0.1,0.2,0.1,0.3c0,0.4,0.1,0.9,0.4,1.2c0.6,0.8,1.6,1.1,2.5,0.6
+            c0.1-0.1,0.2-0.1,0.3,0l0,0c0.1,0.1,0.2,0.2,0.2,0.3l0,0v4c0,0.2-0.1,0.3-0.3,0.4C14.5,7,13.6,7,12.8,6.8l0,0V14c0,0,0,0.1,0,0.2
+            c-0.3,3.5-3.4,6.1-6.9,5.8C2.3,19.7-0.3,16.6,0,13c0.3-3.2,2.9-5.7,6.1-5.8h0.1c0.2,0,0.4,0.1,0.4,0.3c0,0,0,0,0,0l0,0V12
+            c0,0.2-0.2,0.4-0.3,0.4c-0.7,0.1-1.2,0.6-1.2,1.3c0,0.7,0.6,1.3,1.3,1.3c0.7,0,1.2-0.5,1.3-1.2l0,0V0.4C7.6,0.2,7.8,0,8,0
+            c0,0,0,0,0,0C8,0,11.9,0,11.9,0z"/>
+        </g>
+      </g>
+      <style>#icon--tiktok:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% elsif icon == 'etsy' %}
+    <svg id="icon--etsy" class="{{ classes }}" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17.1 20">
+      <g class="icon-fill hover-fill" fill="{{ fill }}">
+        <path d="M17.1,14.1c-0.1,0.5-0.6,4.9-0.7,5.9c-5.3-0.2-9.8-0.2-16.5,0v-1.1c2-0.4,2.7-0.4,2.7-1.6c0.1-3.2,0.2-10.9,0-14.4
+          c0-1.3-0.5-1.2-2.7-1.6V0.2C3.3,0.3,11.4,0.6,16.2,0c-0.2,1.7-0.4,5.7-0.4,5.7h-1c-0.5-1.9-0.8-4-2.5-4H6.3C5.8,1.6,5.8,1.8,5.8,2
+          v7.3c2.6,0,4-0.1,4-0.1c1.3,0,1.2-0.4,1.8-2.9h1.2c-0.2,2.4-0.2,4.8-0.1,7.2h-1.1c-0.4-1.8-0.4-2.7-1.8-2.8c0,0-1-0.1-3.9-0.1v6.2
+          c0,1.2,0.6,1.7,2,1.7h4c2.8,0,3-1.1,4.4-4.5L17.1,14.1z"/>
+      <style>#icon--etsy:hover .hover-fill { fill: {{ hover }};}</style>
+    </svg>
+  {% endif %}
+{% endif %}
+
+{% if type == 'media-icons' %}
+  {% if icon == 'airplay' %}
+    <svg id="Airplay" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-airplay</title><path class="cls-1" fill="{{ fill }}" d="M17.93,30h8.14a1,1,0,0,0,.71-1.71l-4.07-4.07a1,1,0,0,0-1.42,0l-4.07,4.07A1,1,0,0,0,17.93,30Z"/><path class="cls-1" fill="{{ fill }}" d="M28,26.11h-.73a1,1,0,0,1,0-2H28V16H16v8.11h.7a1,1,0,0,1,0,2H16a2,2,0,0,1-2-2V16a2,2,0,0,1,2-2H28a2,2,0,0,1,2,2v8.11A2,2,0,0,1,28,26.11Z"/></svg>
+  {% elsif icon == 'captions-off' %}
+    <svg id="Captions_Off" class="{{ classes }}" width="{{ width }}" data-name="Captions Off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.99 15"><defs><style>.cls-1{fill-opacity:0.5;}</style></defs><title>plyr-captions-off</title><path class="cls-1" fill="{{ fill }}" d="M30,14H14a1,1,0,0,0-1,1V25.11a1,1,0,0,0,1,1h5.25l1.94,2.5a1,1,0,0,0,1.58,0l1.94-2.5H30a1,1,0,0,0,1-1V15A1,1,0,0,0,30,14ZM18.56,22.24a2.06,2.06,0,0,0,1.6-.79.76.76,0,0,1,.91-.24.71.71,0,0,1,.26,1.1,3.51,3.51,0,0,1-2.77,1.36,3.62,3.62,0,0,1,0-7.23,3.54,3.54,0,0,1,2.77,1.36.72.72,0,0,1-.26,1.11.77.77,0,0,1-.91-.25,2.05,2.05,0,0,0-1.6-.78,2.18,2.18,0,0,0,0,4.36Zm10.28.07a3.51,3.51,0,0,1-2.77,1.36,3.62,3.62,0,0,1,0-7.23,3.54,3.54,0,0,1,2.77,1.36.72.72,0,0,1-.26,1.11.78.78,0,0,1-.92-.25,2,2,0,0,0-1.59-.78,2.18,2.18,0,0,0,0,4.36,2,2,0,0,0,1.59-.79.78.78,0,0,1,.92-.24A.71.71,0,0,1,28.84,22.31Z" transform="translate(-13.02 -14)"/></svg>
+  {% elsif icon == 'captions-on' %}
+    <svg id="Captions" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-captions-on</title><path class="cls-1" fill="{{ fill }}" d="M30,14H14a1,1,0,0,0-1,1V25.11a1,1,0,0,0,1,1h5.25l1.94,2.5a1,1,0,0,0,1.58,0l1.94-2.5H30a1,1,0,0,0,1-1V15A1,1,0,0,0,30,14ZM18.56,22.24a2.06,2.06,0,0,0,1.6-.79.76.76,0,0,1,.91-.24.71.71,0,0,1,.26,1.1,3.51,3.51,0,0,1-2.77,1.36,3.62,3.62,0,0,1,0-7.23,3.54,3.54,0,0,1,2.77,1.36.72.72,0,0,1-.26,1.11.77.77,0,0,1-.91-.25,2.05,2.05,0,0,0-1.6-.78,2.18,2.18,0,0,0,0,4.36Zm10.28.07a3.51,3.51,0,0,1-2.77,1.36,3.62,3.62,0,0,1,0-7.23,3.54,3.54,0,0,1,2.77,1.36.72.72,0,0,1-.26,1.11.78.78,0,0,1-.92-.25,2,2,0,0,0-1.59-.78,2.18,2.18,0,0,0,0,4.36,2,2,0,0,0,1.59-.79.78.78,0,0,1,.92-.24A.71.71,0,0,1,28.84,22.31Z"/></svg>
+  {% elsif icon == 'download' %}
+    <svg id="Download" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-download</title><path class="cls-1" fill="{{ fill }}" d="M29,28H15a1,1,0,1,0,0,2H29a1,1,0,1,0,0-2Z"/><path class="cls-1" fill="{{ fill }}" d="M21.29,25.7a1.06,1.06,0,0,0,.33.22,1.07,1.07,0,0,0,.76,0,1.06,1.06,0,0,0,.33-.22l5-5a1,1,0,0,0-1.41-1.41L23,22.58V15a1,1,0,0,0-2,0v7.58l-3.29-3.29A1,1,0,0,0,16.3,20.7Z"/></svg>
+  {% elsif icon == 'enter-fullscreen' %}
+    <svg id="Fullscreen" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-fullscreen</title><path class="cls-1" fill="{{ fill }}" d="M29,14H25a1,1,0,0,0,0,2h3v3a1,1,0,0,0,2,0V15A1,1,0,0,0,29,14Z"/><path class="cls-1" fill="{{ fill }}" d="M19,28H16V25a1,1,0,0,0-2,0v4a1,1,0,0,0,1,1h4a1,1,0,0,0,0-2Z"/><path class="cls-1" fill="{{ fill }}" d="M29,24a1,1,0,0,0-1,1v3H25a1,1,0,0,0,0,2h4a1,1,0,0,0,1-1V25A1,1,0,0,0,29,24Z"/><path class="cls-1" fill="{{ fill }}" d="M19,14H15a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V16h3a1,1,0,0,0,0-2Z"/></svg>
+  {% elsif icon == 'exit-fullscreen' %}
+    <svg id="Exit_Fullscreen" class="{{ classes }}" width="{{ width }}" data-name="Exit Fullscreen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-exit-fullscreen</title><path class="cls-1" fill="{{ fill }}" d="M25,20h4a1,1,0,0,0,0-2H26V15a1,1,0,0,0-2,0v4A1,1,0,0,0,25,20Z"/><path class="cls-1" fill="{{ fill }}" d="M15,26h3v3a1,1,0,0,0,2,0V25a1,1,0,0,0-1-1H15a1,1,0,0,0,0,2Z"/><path class="cls-1" fill="{{ fill }}" d="M25,30a1,1,0,0,0,1-1V26h3a1,1,0,0,0,0-2H25a1,1,0,0,0-1,1v4A1,1,0,0,0,25,30Z"/><path class="cls-1" fill="{{ fill }}" d="M15,20h4a1,1,0,0,0,1-1V15a1,1,0,0,0-2,0v3H15a1,1,0,0,0,0,2Z"/></svg>
+  {% elsif icon == 'fast-forward' %}
+    <svg id="Fast_Forward" class="{{ classes }}" width="{{ width }}" data-name="Fast Forward" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-fast-forward</title><path class="cls-1" fill="{{ fill }}" d="M21.12,20l-6.58-5.47a1,1,0,0,0-1.6.78V28.7a1,1,0,0,0,1.6.78L21.12,24v4.68a1,1,0,0,0,1.59.77l8-6.69a1,1,0,0,0,0-1.54l-8-6.69a1,1,0,0,0-1.59.77Z"/></svg>
+  {% elsif icon == 'logo-vimeo' %}
+    <svg id="Vimeo" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-logo-vimeo</title><path class="cls-1" fill="{{ fill }}" d="M30,18.37c-.1,1.59-1.2,3.68-3.28,6.36s-4,4.18-5.47,4.18c-.89,0-1.69-.9-2.38-2.59-.8-2.38-1.4-7.25-2.79-7.25a7.46,7.46,0,0,0-1.19.79l-.79-1c.79-.7,3.47-3.38,4.67-3.48s2,.7,2.28,2.49c.3,2,.8,6.06,1.79,6.06s2.49-3.38,2.58-4c.1-.89-.29-1.89-2.28-1.09.79-2.58,2.28-3.78,4.47-3.78C29.25,15.19,30.05,16.29,30,18.37Z"/></svg>
+  {% elsif icon == 'logo-youtube' %}
+    <svg id="Youtube" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-logo-youtube</title><path class="cls-1" fill="{{ fill }}" d="M29.75,18.82a2.45,2.45,0,0,0-2.19-2.38,38.84,38.84,0,0,0-11.12,0,2.37,2.37,0,0,0-2.19,2.38,25.38,25.38,0,0,0,0,6.36,2.45,2.45,0,0,0,2.19,2.38A39,39,0,0,0,22,28a39,39,0,0,0,5.56-.4,2.53,2.53,0,0,0,2.19-2.38,25.38,25.38,0,0,0,0-6.36ZM20,25V19l5,3Z"/></svg>
+  {% elsif icon == 'muted' %}
+    <svg id="Muted" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-muted</title><path class="cls-1" fill="{{ fill }}" d="M30.84,29.43l-2.15-2.15A8.78,8.78,0,0,0,30.43,22a8.61,8.61,0,0,0-4.57-7.73.86.86,0,0,0-1.15.38.88.88,0,0,0,.38,1.17A6.87,6.87,0,0,1,28.73,22a7.06,7.06,0,0,1-1.27,4.06l-1.33-1.34a5.24,5.24,0,0,0-.94-6.58.83.83,0,0,0-1.2.07.88.88,0,0,0,.07,1.22,3.49,3.49,0,0,1,.81,4l-2.8-2.8V15.92a.85.85,0,0,0-1.38-.68l-2.22,1.82-3.9-3.9a1,1,0,0,0-1.41,1.41L29.43,30.84a1,1,0,0,0,1.41-1.41Z"/><path class="cls-1" fill="{{ fill }}" d="M13.57,20.26v3.48a1.73,1.73,0,0,0,1.7,1.74h1.4l4,3.28a.85.85,0,0,0,1.38-.68V26.29L14.5,18.72A1.74,1.74,0,0,0,13.57,20.26Z"/></svg>
+  {% elsif icon == 'pause' %}
+    <svg id="Pause" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>plyr-pause</title><path class="cls-1" fill="{{ fill }}" d="M17.5,14a2,2,0,0,0-2,2V28a2,2,0,0,0,4,0V16A2,2,0,0,0,17.5,14Zm9,0a2,2,0,0,0-2,2V28a2,2,0,0,0,4,0V16A2,2,0,0,0,26.5,14Z"/></svg>
+  {% elsif icon == 'pip' %}
+    <svg id="PIP" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>plyr-pip</title><path class="cls-1" fill="{{ fill }}" d="M27,23a1,1,0,0,0-1,1v4H16V18h4a1,1,0,0,0,0-2H15a1,1,0,0,0-1,1V29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1V24A1,1,0,0,0,27,23Z"/><path class="cls-1" fill="{{ fill }}" d="M28.89,14l-3.48.4a1,1,0,0,0-.59,1.7l.83.83-5.34,5.34a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l5.34-5.34.83.83a1,1,0,0,0,1.7-.59l.4-3.48A1,1,0,0,0,28.89,14Z"/></svg>
+  {% elsif icon == 'play' %}
+    <svg id="Play" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>plyr-play</title><path class="cls-1" fill="{{ fill }}" d="M17.41,14.23a1,1,0,0,0-1.52.84V28.93a1,1,0,0,0,1.56.81L27.7,22.41a1,1,0,0,0-.05-1.64Z"/></svg>
+  {% elsif icon == 'restart' %}
+    <svg id="Restart" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><title>plyr-restart</title><path class="cls-1" fill="{{ fill }}" d="M28.44,17.25l1-1a1,1,0,0,0-.6-1.7l-3.47-.4a1,1,0,0,0-1.11,1.11l.4,3.47a1,1,0,0,0,1.7.59l.68-.68A6,6,0,1,1,21,16.05a1,1,0,0,0,.81-1.15,1,1,0,0,0-1.16-.82A8,8,0,1,0,30,22,7.87,7.87,0,0,0,28.44,17.25Z"/></svg>
+  {% elsif icon == 'rewind' %}
+    <svg id="Rewind" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-rewind</title><path class="cls-1" fill="{{ fill }}" d="M22.88,15.31a1,1,0,0,0-1.59-.77l-8,6.69a1,1,0,0,0,0,1.54l8,6.69a1,1,0,0,0,1.59-.77V24l6.58,5.47a1,1,0,0,0,1.6-.78V15.3a1,1,0,0,0-1.6-.78L22.88,20Z"/></svg>
+  {% elsif icon == 'settings' %}
+    <svg id="Settings" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-settings</title><path class="cls-1" fill="{{ fill }}" d="M29.14,20.78a2,2,0,0,1-1.24-3,1,1,0,0,0-.09-1.32l-.31-.31a1,1,0,0,0-1.31-.09,2,2,0,0,1-3-1.23,1,1,0,0,0-1-.87h-.44a1,1,0,0,0-1,.87,2,2,0,0,1-3,1.23,1,1,0,0,0-1.32.09l-.31.31a1,1,0,0,0-.09,1.32,2,2,0,0,1-1.23,3,1,1,0,0,0-.87,1v.44a1,1,0,0,0,.87,1,2,2,0,0,1,1.23,3,1,1,0,0,0,.09,1.31l.31.31a1,1,0,0,0,1.32.09,2,2,0,0,1,3,1.24,1,1,0,0,0,1,.86h.44a1,1,0,0,0,1-.86,2,2,0,0,1,3-1.24,1,1,0,0,0,1.31-.09l.31-.31a1,1,0,0,0,.09-1.31,2,2,0,0,1,1.24-3,1,1,0,0,0,.86-1v-.44a1,1,0,0,0-.86-1ZM22,25a3,3,0,1,1,3-3,3,3,0,0,1-3,3Z"/></svg>
+  {% elsif icon == '3d-badge' %}
+    <svg id="three-d-badge" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><title>3d-badge-thumbnail-angular</title>
+      <path d="M1,25H25V1H1Z" fill="#fff"/>
+      <path d="M.5,25v.5h25V.5H.5V25Z" fill="none" stroke="#000" stroke-opacity="0.05"/>
+      <path class="colored" d="M13,5.13,6.19,9.07v7.87L13,20.87l6.81-3.93V9.07Zm.62,7.07-.62.4v6.53L7.69,16.07V9.93L13,6.87l4.87,2.81Z" fill="{{ fill }}" opacity="0.6"/>
+    </svg>
+  {% elsif icon == '3d-icon' %}
+    <svg id="three-d-icon" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61">
+      <title>3d-icon-button-control-angular</title><rect x="0.5" y="0.5" width="60" height="60" fill="#fff" stroke="#f5f5f5" stroke-miterlimit="10"/>
+      <path d="M30.5,17.35,18.24,24.42V38.58L30.5,45.65l12.26-7.08V24.42ZM20.24,37.42V25.58L30.5,19.65,40.63,25.5,30.5,31.38v12Z" fill="{{ fill }}"/>
+    </svg>
+  {% elsif icon == 'play-icon' %}
+    <svg id="play-icon" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61">
+      <title>play-icon-button-control-angular</title>
+      <rect x="0.5" y="0.5" width="60" height="60" fill="#fff" stroke="#f5f5f5" stroke-miterlimit="10"/>
+      <path d="M23.5,20.5v20l16-10.58Z" fill="{{ fill }}"/>
+    </svg>
+  {% elsif icon == 'video-badge' %}
+    <svg id="video-badge" class="{{ classes }}" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 25H25V1H1V25Z" fill="white"/>
+      <path d="M0.5 25V25.5H1H25H25.5V25V1V0.5H25H1H0.5V1V25Z" stroke="black" stroke-opacity="0.05"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.19995 5.8V20.2L19.3999 12.5858L8.19995 5.8Z" fill="{{ fill }}" fill-opacity="0.6"/>
+    </svg>
+  {% elsif icon == '3d-viewer-controls' %}
+    <svg id="viewer-controls" class="{{ classes }}" width="47" height="136" viewBox="0 0 47 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M1.07703 135H45.077V1H1.07703V135Z" fill="white"/>
+      <path class="colored-stroke" d="M0.577026 135V135.5H1.07703H45.077H45.577V135V1V0.5H45.077H1.07703H0.577026V1V135Z" stroke="black" stroke-opacity="0.05"/>
+      <rect class="colored" x="9" y="45" width="28" height="1" fill="black" fill-opacity="0.05"/>
+      <rect class="colored" x="9" y="90" width="28" height="1" fill="black" fill-opacity="0.05"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M25 105C25 104.448 25.4477 104 26 104H30C30.5523 104 31 104.448 31 105V109C31 109.552 30.5523 110 30 110C29.4477 110 29 109.552 29 109V106H26C25.4477 106 25 105.552 25 105Z" fill="{{ fill }}" fill-opacity="0.8"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M16 114C16.5523 114 17 114.448 17 115V118H20C20.5523 118 21 118.448 21 119C21 119.552 20.5523 120 20 120H16C15.4477 120 15 119.552 15 119V115C15 114.448 15.4477 114 16 114Z" fill="{{ fill }}" fill-opacity="0.8"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M30 114C30.5523 114 31 114.448 31 115V119C31 119.552 30.5523 120 30 120H26C25.4477 120 25 119.552 25 119C25 118.448 25.4477 118 26 118H29V115C29 114.448 29.4477 114 30 114Z" fill="{{ fill }}" fill-opacity="0.8"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M15 105C15 104.448 15.4477 104 16 104H20C20.5523 104 21 104.448 21 105C21 105.552 20.5523 106 20 106H17V109C17 109.552 16.5523 110 16 110C15.4477 110 15 109.552 15 109V105Z" fill="{{ fill }}" fill-opacity="0.8"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M24 16C24 15.4477 23.5523 15 23 15C22.4477 15 22 15.4477 22 16V22H16C15.4477 22 15 22.4477 15 23C15 23.5523 15.4477 24 16 24H22V30C22 30.5523 22.4477 31 23 31C23.5523 31 24 30.5523 24 30V24H30C30.5523 24 31 23.5523 31 23C31 22.4477 30.5523 22 30 22H24V16Z" fill="{{ fill }}" fill-opacity="0.8"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M15 68C15 67.4477 15.4477 67 16 67H30C30.5523 67 31 67.4477 31 68C31 68.5523 30.5523 69 30 69H16C15.4477 69 15 68.5523 15 68Z" fill="{{ fill }}" fill-opacity="0.8"/>
+    </svg>
+  {% elsif icon == '3d-hand-cursor' %}
+    <svg id="hand-cursor" class="{{ classes }}" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="44" height="44" fill="white" fill-opacity="0.01"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M19.7329 14.1646C19.7729 13.0566 20.4989 12.1376 21.4759 11.8576C21.6769 11.8066 21.8849 11.7686 22.1039 11.7686C22.2629 11.7686 22.4179 11.7856 22.5669 11.8126C23.6549 12.0136 24.4769 12.9046 24.4769 13.9726V22.8536H25.4579H25.7379C28.6809 21.4646 30.7369 18.4046 30.7369 14.8286C30.7369 12.7216 30.0229 10.7876 28.8369 9.26863C28.7009 9.09563 28.5549 8.93163 28.4079 8.76863C27.6429 7.93063 26.7249 7.24663 25.6959 6.76863C24.6389 6.27763 23.4699 5.99963 22.2369 5.99963C21.0039 5.99963 19.8359 6.27763 18.7779 6.76863C17.7489 7.24663 16.8309 7.93063 16.0669 8.76863C15.9189 8.93163 15.7729 9.09563 15.6369 9.26863C14.4509 10.7876 13.7369 12.7216 13.7369 14.8286C13.7369 15.2726 13.7689 15.7086 13.8309 16.1336C13.8599 16.3446 13.9189 16.5446 13.9619 16.7506C14.0069 16.9586 14.0399 17.1726 14.0979 17.3746C14.1809 17.6606 14.2939 17.9336 14.4029 18.2066C14.4479 18.3156 14.4789 18.4326 14.5269 18.5396C14.6749 18.8696 14.8499 19.1856 15.0359 19.4926C15.0589 19.5316 15.0769 19.5756 15.1009 19.6146C15.9619 20.9886 17.1819 22.0986 18.6219 22.8056L19.7329 23.3426V14.1646Z" fill="{{ fill }}" fill-opacity="0.5"/>
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M33.9399 29.2183L31.1799 36.9593C31.0079 37.4443 30.5039 37.7693 29.9269 37.7693H23.2409C21.6349 37.7693 20.1489 37.0883 19.2619 35.9493C17.6699 33.9013 15.6149 32.1273 13.1529 30.6793C13.0579 30.6243 13.0039 30.5423 13.0009 30.4483C12.9969 30.3483 13.0469 30.2523 13.1939 30.1513C13.7529 29.7583 14.4279 29.5523 15.1199 29.5523C15.3499 29.5523 15.5829 29.5743 15.8109 29.6213L20.7329 30.6153V27.9993V23.4883V13.9723C20.7329 13.3093 21.3479 12.7693 22.1039 12.7693C22.8609 12.7693 23.4769 13.3093 23.4769 13.9723V22.8633V23.8543H24.4579H25.9769H26.4299C26.7029 23.8543 26.9629 23.9273 27.1869 24.0653L33.4439 27.9393C33.4709 27.9563 33.4889 27.9813 33.5139 27.9993C33.9229 28.2953 34.0999 28.7703 33.9399 29.2183ZM15.1009 19.6143C15.0769 19.5753 15.0589 19.5313 15.0359 19.4923C14.8499 19.1863 14.6749 18.8693 14.5269 18.5393C14.4789 18.4323 14.4479 18.3163 14.4029 18.2063C14.2939 17.9333 14.1809 17.6603 14.0979 17.3743C14.0399 17.1723 14.0069 16.9583 13.9619 16.7503C13.9189 16.5443 13.8599 16.3443 13.8309 16.1333C13.7689 15.7083 13.7369 15.2733 13.7369 14.8283C13.7369 12.7213 14.4509 10.7873 15.6369 9.26931C15.7729 9.0953 15.9189 8.93131 16.0669 8.76931C16.8309 7.93031 17.7489 7.24631 18.7779 6.76931C19.8359 6.27831 21.0039 5.99931 22.2369 5.99931C23.4699 5.99931 24.6389 6.27831 25.6959 6.76931C26.7249 7.24631 27.6429 7.93031 28.4079 8.76931C28.5549 8.93131 28.7009 9.0953 28.8359 9.26931C30.0229 10.7873 30.7369 12.7213 30.7369 14.8283C30.7369 18.4053 28.6809 21.4643 25.7379 22.8543H25.4579H24.4769V13.9723C24.4769 12.9053 23.6549 12.0133 22.5669 11.8133C22.4179 11.7853 22.2629 11.7693 22.1039 11.7693C21.8849 11.7693 21.6769 11.8063 21.4759 11.8583C20.4989 12.1373 19.7729 13.0563 19.7329 14.1643V23.3423L18.6219 22.8053C17.1809 22.0983 15.9609 20.9903 15.1009 19.6143ZM33.9689 27.0893L27.7129 23.2153C27.6109 23.1523 27.4949 23.1173 27.3829 23.0713C30.0659 21.2813 31.7369 18.2163 31.7369 14.8283C31.7369 14.3423 31.6999 13.8643 31.6329 13.3973C31.4179 11.8823 30.8679 10.4783 30.0629 9.26931C29.9699 9.12931 29.8689 8.99431 29.7679 8.86131C29.7459 8.83031 29.7239 8.79931 29.7019 8.76931C29.4109 8.38631 29.0929 8.02631 28.7529 7.69131C28.4109 7.35731 28.0449 7.04831 27.6589 6.76931C26.5039 5.93531 25.1669 5.35731 23.7179 5.11931C23.4769 5.08031 23.2329 5.05031 22.9859 5.03131C22.7389 5.01031 22.4899 5.00031 22.2379 5.00031C21.7339 5.00031 21.2389 5.04131 20.7559 5.11931C19.3089 5.35731 17.9699 5.93531 16.8159 6.76931C16.5279 6.97731 16.2649 7.21631 16.0029 7.45531C15.7019 7.72831 15.4229 8.02231 15.1579 8.33231C15.0319 8.48031 14.8909 8.61431 14.7729 8.76931C14.7169 8.84231 14.6659 8.91831 14.6119 8.99231C14.5439 9.08331 14.4749 9.17431 14.4119 9.26931C14.3099 9.42131 14.2159 9.57831 14.1239 9.73731C13.9739 9.9903 13.8329 10.2483 13.7059 10.5153C13.6909 10.5453 13.6799 10.5763 13.6659 10.6063C13.0729 11.8873 12.7369 13.3173 12.7369 14.8283C12.7369 18.6603 14.9189 22.1703 18.2959 23.7663L19.7329 24.4473V27.9993V29.3933L16.0099 28.6413C15.7149 28.5823 15.4189 28.5543 15.1219 28.5553C15.1049 28.5553 15.0879 28.5583 15.0709 28.5583C14.8189 28.5623 14.5679 28.5913 14.3199 28.6373C14.2409 28.6533 14.1619 28.6733 14.0829 28.6933C13.8899 28.7393 13.7009 28.8003 13.5149 28.8733C13.4399 28.9033 13.3639 28.9303 13.2899 28.9633C13.0409 29.0773 12.7959 29.2073 12.5669 29.3683C12.1939 29.6313 11.9829 30.0513 12.0009 30.4903C12.0199 30.9233 12.2599 31.3163 12.6459 31.5413C14.9989 32.9253 16.9589 34.6143 18.4729 36.5633C18.6069 36.7363 18.7519 36.9003 18.9069 37.0543C19.9929 38.1363 21.5629 38.7673 23.2329 38.7693H29.9299C30.6779 38.7683 31.3609 38.4363 31.7879 37.8973C31.9299 37.7183 32.0439 37.5163 32.1239 37.2953L34.8809 29.5543C34.9749 29.2933 35.0099 29.0243 34.9929 28.7603C34.9749 28.4973 34.9049 28.2393 34.7899 27.9993C34.6159 27.6393 34.3399 27.3193 33.9689 27.0893Z" fill="{{ fill }}" fill-opacity="0.6"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M33.4442 27.9385L27.1872 24.0645C26.9632 23.9275 26.7022 23.8535 26.4302 23.8535H25.9772H24.4572H23.4772V22.8625V13.9725C23.4772 13.3095 22.8612 12.7695 22.1042 12.7695C21.3482 12.7695 20.7332 13.3095 20.7332 13.9725V23.4875V27.9995V30.6155L15.8112 29.6215C15.5822 29.5745 15.3502 29.5525 15.1192 29.5525C14.4282 29.5525 13.7522 29.7585 13.1942 30.1505C13.0472 30.2525 12.9962 30.3485 13.0002 30.4485C13.0042 30.5425 13.0582 30.6245 13.1532 30.6795C15.6152 32.1275 17.6702 33.9005 19.2622 35.9495C20.1492 37.0885 21.6352 37.7695 23.2412 37.7695H29.9272C30.5042 37.7695 31.0082 37.4435 31.1802 36.9595L33.9402 29.2185C34.1002 28.7705 33.9232 28.2955 33.5142 27.9995C33.4892 27.9805 33.4712 27.9565 33.4442 27.9385Z" fill="white"/>
+      <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="11" y="4" width="25" height="36">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0007 4.00031H35.9979V39.7688H11.0007V4.00031Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask0)">
+      <path class="colored" fill-rule="evenodd" clip-rule="evenodd" d="M34.9928 28.7603C35.0108 29.0243 34.9748 29.2933 34.8818 29.5543L32.1238 37.2953C32.0448 37.5163 31.9298 37.7183 31.7878 37.8973C31.3608 38.4363 30.6788 38.7683 29.9308 38.7693H23.2328C21.5628 38.7673 19.9928 38.1363 18.9068 37.0543C18.7528 36.9003 18.6068 36.7363 18.4728 36.5633C16.9588 34.6143 14.9988 32.9253 12.6458 31.5413C12.2608 31.3163 12.0198 30.9233 12.0008 30.4903C11.9828 30.0513 12.1938 29.6313 12.5668 29.3683C12.7968 29.2073 13.0408 29.0773 13.2898 28.9633C13.3638 28.9303 13.4398 28.9033 13.5148 28.8733C13.7018 28.8003 13.8898 28.7393 14.0828 28.6933C14.1618 28.6733 14.2408 28.6533 14.3198 28.6373C14.5678 28.5913 14.8188 28.5623 15.0708 28.5583C15.0888 28.5583 15.1048 28.5553 15.1218 28.5553C15.1248 28.5553 15.1278 28.5543 15.1318 28.5543C15.4248 28.5543 15.7188 28.5823 16.0108 28.6413L19.7328 29.3933V27.9993V24.4473L18.2968 23.7663C14.9198 22.1703 12.7368 18.6603 12.7368 14.8283C12.7368 13.3173 13.0728 11.8873 13.6658 10.6063C13.6808 10.5763 13.6908 10.5453 13.7058 10.5153C13.8328 10.2483 13.9738 9.9903 14.1238 9.73731C14.2168 9.57831 14.3098 9.42131 14.4118 9.26931C14.4748 9.17431 14.5448 9.08331 14.6118 8.99231C14.6658 8.91831 14.7178 8.84231 14.7728 8.76931C14.8908 8.61431 15.0318 8.48031 15.1578 8.3323C15.4238 8.02231 15.7018 7.72831 16.0028 7.45531C16.2648 7.21631 16.5278 6.97731 16.8158 6.76931C17.9708 5.93531 19.3088 5.35731 20.7568 5.11931C21.2388 5.04131 21.7338 5.00031 22.2378 5.00031C22.4898 5.00031 22.7388 5.01031 22.9858 5.03131C23.2328 5.05031 23.4768 5.08031 23.7188 5.11931C25.1668 5.35731 26.5048 5.93531 27.6588 6.76931C28.0458 7.04831 28.4108 7.35731 28.7528 7.69131C29.0938 8.02631 29.4108 8.38631 29.7018 8.76931C29.7238 8.79931 29.7458 8.83031 29.7678 8.86131C29.8698 8.99431 29.9708 9.12931 30.0628 9.26931C30.8688 10.4783 31.4178 11.8823 31.6338 13.3973C31.6998 13.8643 31.7368 14.3423 31.7368 14.8283C31.7368 18.2163 30.0658 21.2813 27.3838 23.0713C27.4948 23.1173 27.6108 23.1523 27.7138 23.2153L33.9698 27.0893C34.3408 27.3193 34.6148 27.6393 34.7898 27.9993C34.9048 28.2393 34.9748 28.4973 34.9928 28.7603ZM35.6898 27.5653C35.4248 27.0163 35.0128 26.5583 34.4958 26.2393L29.1728 22.9423C31.4278 20.9053 32.7368 17.9713 32.7368 14.8283C32.7368 12.6393 32.0998 10.5243 30.8958 8.71431C30.7698 8.52631 30.6348 8.34331 30.4968 8.16231C29.8518 7.31431 29.0948 6.57231 28.2448 5.95831C26.4718 4.67731 24.3928 4.00031 22.2378 4.00031C20.0808 4.00031 18.0048 4.67731 16.2298 5.95831C15.3818 6.57231 14.6238 7.31431 13.9768 8.16331C13.8408 8.34331 13.7048 8.52631 13.5788 8.71431C12.3738 10.5243 11.7368 12.6393 11.7368 14.8283C11.7368 19.0463 14.1438 22.9093 17.8698 24.6703L18.7328 25.0793V27.9993V28.1713L16.2078 27.6603C15.8518 27.5903 15.4908 27.5543 15.1318 27.5543C14.0068 27.5543 12.9208 27.8993 11.9918 28.5503C11.3388 29.0113 10.9698 29.7523 11.0028 30.5333C11.0358 31.3073 11.4608 32.0063 12.1408 32.4053C14.3818 33.7233 16.2468 35.3283 17.6838 37.1773C18.9428 38.7973 21.0168 39.7663 23.2328 39.7693H29.9308C31.3498 39.7683 32.6098 38.9083 33.0648 37.6313L35.8238 29.8903C36.0958 29.1333 36.0478 28.3063 35.6898 27.5653Z" fill="{{ fill }}" fill-opacity="0.05"/>
+      </g>
+    </svg>
+  {% elsif icon == 'zoom-in' %}
+    <svg id="zoom-in" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+      <title>zoomin_icon</title>
+      <path class="cls-1" fill="{{ fill }}" d="M29,21H23V15a1,1,0,0,0-2,0v6H15a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V23h6a1,1,0,0,0,0-2Z" transform="translate(-14 -14)" fill-opacity="0.8"/>
+    </svg>
+  {% elsif icon == 'zoom-out' %}
+    <svg id="zoom-out" class="{{ classes }}" xmlns="http://www.w3.org/2000/svg" width="16" height="2" viewBox="0 0 16 2"><title>zoomout_icon</title><path  class="cls-1" fill="{{ fill }}" d="M29,21H15a1,1,0,0,0,0,2H29a1,1,0,0,0,0-2Z" transform="translate(-14 -21)" fill-opacity="0.8"/></svg>
+  {% else icon == 'volume' %}
+    <svg id="Volume" class="{{ classes }}" width="{{ width }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><title>plyr-volume</title><path class="cls-1" fill="{{ fill }}" d="M20.69,15.24l-4,3.28h-1.4a1.73,1.73,0,0,0-1.7,1.74v3.48a1.73,1.73,0,0,0,1.7,1.74h1.4l4,3.28a.85.85,0,0,0,1.38-.68V15.92A.85.85,0,0,0,20.69,15.24Z"/><path class="cls-1" fill="{{ fill }}" d="M25.86,14.27a.86.86,0,0,0-1.15.38.88.88,0,0,0,.38,1.17A6.87,6.87,0,0,1,28.73,22a6.87,6.87,0,0,1-3.64,6.18.88.88,0,0,0-.38,1.17.85.85,0,0,0,1.15.38A8.62,8.62,0,0,0,30.43,22,8.61,8.61,0,0,0,25.86,14.27Z"/><path class="cls-1" fill="{{ fill }}" d="M26.89,22a5.14,5.14,0,0,0-1.7-3.86.83.83,0,0,0-1.2.07.88.88,0,0,0,.07,1.22,3.49,3.49,0,0,1,0,5.14A.88.88,0,0,0,24,25.79a.83.83,0,0,0,1.2.07A5.14,5.14,0,0,0,26.89,22Z"/></svg>
+  {% endif %}
+{% endif %}

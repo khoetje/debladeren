@@ -1,0 +1,1 @@
+{"sections":{"banner":{"type":"banner-image","settings":{"full_width":true,"banner_height":400}},"main":{"type":"main-list-collections","settings":{"text":"<p>Bekijk hier al onze collecties<\/p>"}},"grid":{"type":"main-list-collections-all","settings":{"items_per_row":3,"items_per_page":15}}},"order":["banner","main","grid"]}

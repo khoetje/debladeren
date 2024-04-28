@@ -1,0 +1,40 @@
+{% assign onboard = false %}
+
+{% if block.settings.device_image != blank %}
+  {% assign type = block.settings.device_image %}
+  {% assign onboard = false %}
+{% elsif block.settings.image != blank and block.settings.device_image == blank %}
+  {% assign type = block.settings.image %}
+  {% assign onboard = false %}
+{% elsif block.settings.image == blank and block.settings.device_image == blank %}
+  {% assign onboard = true %}
+{% endif %}
+
+{% if onboard == false %}
+  {% assign image_box_ratio = type.height | append: ".0" | times: 1 | divided_by: type.width | times: 100 | append: "%" %}
+  {% assign img_url = type | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+  <div class="box-ratio" style="padding-bottom: {{ image_box_ratio }};">
+    <a href="{{ block.settings.link }}">
+      <img class="lazyload lazyload-fade"
+        src="{{ type | img_url: '300x' }}"
+        data-srcset="{{ img_url }}"
+        data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+        data-aspectratio="{{ type.aspect_ratio }}"
+        data-sizes="auto"
+        data-parent-fit="cover"
+        alt="{{ type.alt | escape }}">
+    </a>
+  </div>
+  <noscript>
+    <a href="{{ block.settings.link }}">
+      <img src="{{ type | img_url: '1024x' }}" alt="{{ type.alt | escape }}">
+    </a>
+  </noscript>
+{% else %}
+  {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+  {% assign placeholder = 'product-' | append: current %}
+  <div class="placeholder-image onboard-slide">
+    {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+  </div>
+{% endif %}

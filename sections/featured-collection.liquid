@@ -1,0 +1,249 @@
+{% comment %} Featured Collection Logic {% endcomment %}
+{%- liquid
+  assign collection = collections[section.settings.collection]
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+  if settings.section_title_align == 'left'
+    assign heading_align = 'a-left'
+  else
+    assign heading_align = 'a-center'
+  endif
+
+  case section.settings.items_per_row
+  when 5
+    assign wrapper_class = 'wrapper-fifths'
+    assign grid_width = 'span-3 auto sm-span-6'
+  when 4
+    assign grid_width = 'span-3 auto sm-span-6'
+  when 3
+    assign grid_width = 'span-4 auto sm-span-6'
+  when 2
+    assign grid_width = 'span-6 auto sm-span-6'
+  when 1
+    assign grid_width = 'span-12 sm-span-12'
+  endcase
+
+  assign carousel = false
+  if section.settings.display_type == 'carousel'
+    assign carousel = true
+  endif
+
+  assign prod_limit = section.settings.items_per_page
+  assign items_per_row = section.settings.items_per_row
+
+  assign enough_to_wrap = false
+  if collection.products.size >= items_per_row
+    assign enough_to_wrap = true
+  endif
+
+  if collection == blank
+    assign enough_to_wrap = true
+  endif
+
+  case section.settings.items_per_row
+  when 2
+    assign prod_grid = 48
+  when 3
+    assign prod_grid = 31.333
+  when 4
+    assign prod_grid = 23
+  when 5
+    assign prod_grid = 18
+  endcase
+
+  if carousel
+    assign heading_width = 'span-12 auto sm-span-8'
+  else
+    assign heading_width = 'span-12 auto sm-span-12'
+  endif
+-%}
+
+{% capture slideshow_config %}{
+  "wrapAround":{{ enough_to_wrap }},
+  "cellAlign": "left",
+  "dragThreshold":"15",
+  "draggable": {{ enough_to_wrap }},
+  "pauseAutoPlayOnHover":false,
+  "prevNextButtons":{{ enough_to_wrap }},
+  "pageDots": false
+}{% endcapture %}
+
+
+{% comment %} Featured Collection Template {% endcomment %}
+<section
+  class="global__section section-featured-collection featured-collection-{{ section.id }} {{ section_padding }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collections"
+  data-items-per-page="{{ section.settings.items_per_page }}">
+
+  <div class="wrapper relative featured-collection--{%- if carousel -%}carousel{%- else -%}grid{%- endif -%}">
+    {% render 'snip-headings', grid: heading_width,  align: heading_align, url: collection.url %}
+    <div class="featured-collection__wrapper--loop span-12{% if carousel %} js-collection-carousel{% endif %}" {%- if carousel -%}data-flickity='{{ slideshow_config }}'{%- endif -%}>
+      {%- unless carousel -%}<div class="wrapper edge cg6 rg9 {{ wrapper_class }}">{%- endunless -%}
+      {% if collection != blank %}
+        {% for product in collection.products limit: prod_limit %}
+          {% render 'product-loop',
+            carousel_slide: carousel_slide,
+            carousel: carousel,
+            collection: collection,
+            product: product,
+            product_info_align: 'a-center',
+            items_per_row: grid_width,
+            featured_collection: true  %}
+        {% endfor %}
+      {% else %}
+        {% for i in (1..prod_limit) %}
+          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+          {% assign placeholder = 'product-' | append: current %}
+            <article class="product-listing dropshadow--{{ settings.product_grid_dropshadow }} padding--{{ settings.product_grid_padding }} {% if carousel %}{{ carousel_slide }}{% else %}{{ grid_width }}{% endif %} relative {{ settings.image_ratio }} a-center">
+              <a href="#" rel="nofollow">
+                <div class="product-image relative sm-px0 sm-py0 {% if settings.product_grid_padding %}px7 py7{% else %}px0 py0{% endif %}">
+                  <div class="reveal relative demo-1 color-3">
+                    {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                </div>
+                <div class="product-info mt1 pb1 px1 sm-px0 a-center">
+                  <small class="product-vendor block mb1">Product Vendor</small>
+                  <p class="product-title">Product Title</p>
+                  <p class="product-subtitle mb0">Product subtitle</p>
+                </div>
+                <div class="product-price mt1 pb2 px1 sm-px0 a-center">
+                  $12.99
+                </div>
+              </a>
+            </article>
+        {% endfor %}
+      {% endif %}
+      {%- unless carousel -%}</div>{%- endunless -%}
+    </div>
+  </div>
+
+  <style>
+  .featured-collection-{{ section.id }} .section-heading {
+    padding-bottom: 0;
+  }
+  {%- if carousel -%}
+    .featured-collection-{{ section.id }} .flickity-button.previous {
+      position: absolute;
+      top: -60px;
+      right: 50px;
+      left: unset;
+    }
+    .featured-collection-{{ section.id }} .flickity-button.next {
+      position: absolute;
+      top: -60px;
+      right: 0;
+    }
+    .featured-collection-{{ section.id }} .flickity-viewport,
+    .featured-collection-{{ section.id }} .flickity-enabled.is-draggable {
+      outline: none !important;
+      outline-offset: none !important;
+    }
+   .featured-collection-{{ section.id }} .product-listing {
+     margin-right: 2.05%;
+     margin-bottom: 20px;
+     width: {{ prod_grid }}%;
+   }
+   @media (max-width: 767px) {
+     .featured-collection-{{ section.id }} .product-loop {
+       grid-column: 1/13 !important;
+       width: 100% !important;
+     }
+     .featured-collection-{{ section.id }} .product-listing {
+       margin-right: 10px;
+       width: 100%;
+     }
+   }
+  {%- else -%}
+    .featured-collection-{{ section.id }} .product-loop {
+      grid-column: 1/13;
+      width: 100%;
+    }
+  {%- endif -%}
+  </style>
+</section>
+{% schema %}
+{
+  "name": "Featured collection",
+  "class": "dynamic-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    },
+    {
+       "type": "select",
+       "id": "display_type",
+       "options": [
+          { "value": "carousel", "label": "Carousel"},
+          { "value": "grid", "label": "Grid"}
+       ],
+       "default": "carousel",
+       "label": "Display type"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Products per row",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "items_per_page",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "label": "Products shown",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection"
+    }
+  ],
+  "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "product", "search", "customers/account"]
+}
+{% endschema %}

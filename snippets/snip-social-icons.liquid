@@ -1,0 +1,42 @@
+<div id="social-icons" class="mb1">
+  {% if settings.facebook_url != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.facebook_url }}" aria-label="Facebook">
+      {% render 'snip-icons', type: 'social', icon: 'facebook', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.twittername != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.twittername }}" aria-label="Twitter">
+      {% render 'snip-icons', type: 'social', icon: 'twitter', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.pinterest_url != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.pinterest_url }}" aria-label="Pinterest">
+      {% render 'snip-icons', type: 'social', icon: 'pinterest', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.youtube_url != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.youtube_url }}" aria-label="Youtube">
+      {% render 'snip-icons', type: 'social', icon: 'youtube', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.linkedin_url != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.linkedin_url }}" aria-label="Linked In">
+      {% render 'snip-icons', type: 'social', icon: 'linkedin', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.instagram != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.instagram }}" aria-label="Instagram">
+      {% render 'snip-icons', type: 'social', icon: 'instagram', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.tiktok != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.tiktok }}" aria-label="Tiktok">
+      {% render 'snip-icons', type: 'social', icon: 'tiktok', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+  {% if settings.etsy != blank %}
+    <a class="inline-block v-center mb0" href="{{ settings.etsy }}" aria-label="Etsy">
+      {% render 'snip-icons', type: 'social', icon: 'etsy', classes:'sm mt0 mr3 mb5 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    </a>
+  {% endif %}
+</div>

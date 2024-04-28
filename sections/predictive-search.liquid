@@ -1,0 +1,122 @@
+{% comment %}
+section/predictive-search.liquid
+{% endcomment %}
+
+{%- if predictive_search.performed -%}
+
+  {%- liquid
+
+    assign counter = 0
+
+    if predictive_search.resources.collections.size > 0
+      assign counter = counter | plus: 1
+    endif
+    if predictive_search.resources.pages.size > 0
+      assign counter = counter | plus: 1
+    endif
+    if predictive_search.resources.articles.size > 0
+      assign counter = counter | plus: 1
+    endif
+
+    case counter
+      when 1
+        assign grid_classes = 'span-12'
+      when 2
+        assign grid_classes = 'span-6'
+      when 3
+        assign grid_classes = 'span-4'
+    endcase
+
+  -%}
+
+  <div class="predictive-search-results" id="predictive-search-results">
+    <ul id="predictive-search-results-list"
+        class="predictive-search__results-list wrapper edge cg8"
+        role="listbox"
+        aria-labelledby="predictive-search-products">
+
+
+      <!-- Products -->
+      {%- if predictive_search.resources.products.size > 0 -%}
+        <li class="span-12 auto">
+          <h3 id="predictive-search-products" class="predictive-search__heading h4 a-left">
+            {{ 'predictive_search.products' | t }}
+          </h3>
+          <ul class="search__product-loop wrapper wrapper-fifths">
+            {%- for product in predictive_search.resources.products -%}
+              <li class="product-index span-3 sm-span-6 auto" role="option">
+                {% render 'product-loop', product: product, collection: collection %}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- endif -%}
+
+
+      <!-- Collections -->
+      {%- if predictive_search.resources.collections.size > 0 -%}
+        <li class="{{ grid_classes }} auto">
+          <h3 id="predictive-search-collections" class="predictive-search__heading h4 a-left">
+            {{ 'predictive_search.collections' | t }}
+          </h3>
+          <ul>
+            {%- for collection in predictive_search.resources.collections -%}
+              <li class="predictive-search__list-item" role="option">
+                <a class="predictive-search__item" href="{{ collection.url }}" title="{{ collection.title }}">
+                  {{ collection.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- endif -%}
+
+
+      <!-- Pages -->
+      {%- if predictive_search.resources.pages.size > 0 -%}
+        <li class="{{ grid_classes }} auto">
+          <h3 id="predictive-search-pages" class="predictive-search__heading h4 a-left">
+            {{ 'predictive_search.pages' | t }}
+          </h3>
+          <ul>
+            {%- for page in predictive_search.resources.pages -%}
+              <li class="predictive-search__list-item" role="option">
+                <a class="predictive-search__item" href="{{ page.url }}" title="{{ page.title }}">
+                  {{ page.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- endif -%}
+
+
+      <!-- Articles -->
+      {%- if predictive_search.resources.articles.size > 0 -%}
+        <li class="{{ grid_classes }} auto">
+          <h3 id="predictive-search-articles" class="predictive-search__heading h4 a-left">
+            {{ 'predictive_search.articles' | t }}
+          </h3>
+          <ul>
+            {%- for article in predictive_search.resources.articles -%}
+              <li class="predictive-search__list-item" role="option">
+                <a class="predictive-search__item" href="{{ article.url }}" title="{{ article.title }}">
+                  {{ article.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- endif -%}
+
+      <!-- More results -->
+      <li class="predictive-search__list-item predictive-search__list-item--search span-12 auto" role="option">
+        <div class="predictive-search__item">
+          <button class="button btn-outline">
+            {{ 'predictive_search.search_for' | t: terms: predictive_search.terms }}
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+{%- endif -%}

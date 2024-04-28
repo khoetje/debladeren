@@ -1,0 +1,149 @@
+{% comment %} Featured Video Logic {% endcomment %}
+{% liquid
+  if section.settings.full_width
+    assign full_width =  'edge'
+  endif
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+  if settings.section_title_align == 'left'
+    assign heading_align = 'a-left'
+  else
+    assign heading_align = 'a-center'
+  endif
+  %}
+
+{% comment %} Featured Video Template {% endcomment %}
+<section
+  class="global__section featured-video-{{ section.id }} {{ section_padding }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-video">
+
+  <div class="wrapper ">
+    {% render 'snip-headings', align: heading_align,  grid: 'span-12', heading: section.settings.heading %}
+  </div>
+  {% unless section.settings.full_width %}<div class="wrapper">{% endunless %}
+    <div class="outer-wrapper span-12">
+      <div class="video-wrapper">
+        {% if section.settings.video_url == blank %}
+          <iframe title="{{ section.settings.description | escape }}" src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="100%" frameborder="0" allowfullscreen></iframe>
+        {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe title="{{ section.settings.description | escape }}" src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="100%" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe title="{{ section.settings.description | escape }}" src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?byline=0&portrait=0&badge=0" width="100%" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% unless section.settings.full_width %}</div>{% endunless %}
+  <style media="screen">
+    .featured-video-{{ section.id }} .video-wrapper {
+      padding-bottom: calc({{ section.settings.video_ratio }} * 100%);
+    }
+    .featured-video-{{ section.id }} .outer-wrapper {
+      {% if section.settings.full_width %}
+        width: 100%;
+      {% else %}
+        width: {{ section.settings.video_width }}%;
+      {% endif %}
+      margin: 0 auto;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name":"Video",
+  "class": "dynamic-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width (edge to edge)",
+      "default": true
+    },
+    {
+      "type":      "range",
+      "id":        "video_width",
+      "min":        30,
+      "max":        100,
+      "step":       10,
+      "unit":       "%",
+      "label":     "Video Width",
+      "default":   100
+    },
+    {
+     "type": "select",
+     "id": "video_ratio",
+     "default": "9 / 16",
+     "options": [
+        { "value": "3 / 4", "label": "3 x 4 ratio"},
+        { "value": "1 / 1", "label": "1 x 1 ratio"},
+        { "value": "2 / 3", "label": "2 x 3 ratio"},
+        { "value": "4 / 6", "label": "4 x 6 ratio"},
+        { "value": "5 / 7", "label": "5 x 7 ratio"},
+        { "value": "9 / 16", "label": "9 x 16 ratio"}
+     ],
+     "label": "Video aspect ratio"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading",
+      "default":"Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "YouTube or Vimeo link",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "default": "Describe the video for customers using screen readers",
+      "label": "Video alt text"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+  ],
+  "presets": [
+	 {
+      "name": "Video"
+    }
+	],
+  "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "product", "search"]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+{% comment %} GLOBAL: Scroll Animation {% endcomment %}
+{% if delay == blank %}
+  {% assign delay = 0 %}
+{% endif %}
+
+{% if duration == blank %}
+  {% assign duration = 400 %}
+{% endif %}
+
+{% if easing == blank %}
+  {% assign easing = 'ease' %}
+{% endif %}
+
+{% if mirror == blank %}
+  {% assign mirror = false %}
+{% endif %}
+
+{% if once == blank %}
+  {% assign once = false %}
+{% endif %}
+
+{% if placement == blank %}
+  {% assign placement = 'top-bottom' %}
+{% endif %}
+
+{% if offset == blank %}
+  {% assign offset = 120 %}
+{% endif %}
+
+{% if type == 'scroll' %}
+  {% assign style = settings.scroll_animation %}
+{% elsif type == 'text' %}
+  {% assign style = settings.text_animation %}
+{% endif %}
+
+{% unless style == 'none' %}
+  data-aos="{{ style }}"
+  data-aos-delay="{{ delay }}"
+  data-aos-anchor-placement="{{ placement }}"
+  data-aos-duration="{{ duration }}"
+  data-aos-easing="{{ easing }}"
+  data-aos-mirror="{{ mirror }}"
+  data-aos-once="{{ once }}"
+  data-aos-offset="{{ offset }}"
+{% endunless %}

@@ -1,0 +1,149 @@
+{% comment %} Logo List Logic {% endcomment %}
+{%- liquid
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+  case section.blocks.size
+    when 1, 0
+      assign full_class = 'span-12 auto'
+      assign block_width = 'span-12 auto sm-span-6'
+    when 2
+      assign full_class = 'span-12 auto'
+      assign block_width = 'span-6 auto sm-span-6'
+    when 3
+      assign full_class = 'span-12 auto'
+      assign block_width = 'span-4 auto sm-span-6'
+    when 4
+      assign full_class = 'span-12 auto'
+      assign block_width = 'span-3 auto sm-span-6'
+    when 5
+      assign wrapper_class = 'wrapper-fifths'
+      assign full_class = 'span-12 span-full-fifths'
+      assign block_width = 'span-3 auto sm-span-6'
+    when 6
+     assign full_class = 'span-12 auto'
+     assign block_width = 'span-2 auto sm-span-6'
+  endcase
+
+  if settings.section_title_align == 'left'
+    assign heading_align = 'a-left'
+  else
+    assign heading_align = 'a-center'
+  endif
+-%}
+
+
+{% comment %} Logo List Template {% endcomment %}
+<section
+  class="global__section logo-list-{{ section.id }} {{ section_padding }}"
+  data-section-id="{{ section.id }}">
+
+  <div class="wrapper {{ wrapper_class }}">
+    {% render 'snip-headings', align: heading_align,  grid: full_class, heading: section.settings.title %}
+
+    {% for block in section.blocks %}
+      <article class="{{ block_width }}" {{ block.shopify_attributes }}>
+        <div class="logo-list">
+          {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+            {% if block.settings.image != blank %}
+              {% render 'helper-image' | type: block.settings.image, data_widths: '[180, 360, 540, 720, 900]' %}
+            {% else %}
+              <div class="onboard demo-1 color-2">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          {% if block.settings.link != blank %}</a>{% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  {% if section.blocks.size == 0 %}
+    {% render 'onboard-no-blocks' %}
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Logo list",
+  "class": "dynamic-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "As seen in"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+	],
+	"blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo list",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ],
+  "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "product", "search"]
+  }
+{% endschema %}

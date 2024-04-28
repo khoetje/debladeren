@@ -1,0 +1,87 @@
+{% comment %} Breadcrumbs Logic {% endcomment %}
+{%- liquid
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+-%}
+
+{% comment %} Breadcrumbs Template {% endcomment %}
+<section class="breadcrumb__nav wrapper global__section {{ section_padding }}">
+  <div class="span-12 auto">
+    {% if template == "article" %}
+      <a href="{{ routes.root_url }}" class="homepage-link" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      <span class="separator">/</span>
+      {{ blog.title | link_to: blog.url }}
+      <span class="separator">/</span>
+      <span class="page-title">{{ page_title }}</span>
+    {% elsif template == "list-collections" %}
+      <a href="{{ routes.root_url }}" class="homepage-link" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      <span class="separator">/</span>
+      <span class="page-title">{{ 'collections.general.all_collections' | t }}</span>
+    {% elsif template contains "collection" %}
+        <a href="{{ routes.root_url }}" class="homepage-link" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      {% if current_tags.size > 0 %}
+        <span class="separator">/</span>
+        {{ collection.title | link_to: collection.url }}
+        <span class="separator">/</span>
+        <span class="page-title">{{ current_tags.first }}</span>
+      {% else %}
+        <span class="separator">/</span>
+        <span class="page-title">{{ collection.title }}</span>
+      {% endif %}
+    {% elsif template contains "order" or template contains "addresses" or template contains "register" %}
+      <a href="{{ routes.root_url }}" class="homepage-link" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      <span class="separator">/</span>
+      <a href="{{ routes.account_url }}">{{ 'customer.account.title' | t }}</a>
+      <span class="separator">/</span>
+      <span class="page-title">{{ page_title }}</span>
+    {% else %}
+      <a href="{{ routes.root_url }}" class="homepage-link" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+      <span class="separator">/</span>
+      <span class="page-title">{{ page_title }}</span>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "class": "dynamic-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+  ],
+  "presets": [{
+    "name": "Breadcrumbs"
+  }],
+  "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "page", "product", "search", "customers/account", "customers/order", "customers/addresses"]
+}
+{% endschema %}

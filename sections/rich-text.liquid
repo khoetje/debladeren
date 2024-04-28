@@ -1,0 +1,142 @@
+{% comment %} Rich Text logic {% endcomment %}
+{%- liquid
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+-%}
+
+{% comment %} Rich Text Template {% endcomment %}
+<section
+  class="global__section section-richtext rich-text-{{ section.id }} {{ section_padding }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="rich-text"
+  {% render 'helper-animation', type: 'scroll' %}>
+
+  <div class="wrapper  py4">
+    {% render 'snip-headings', align: 'a-center', grid: 'span-12' %}
+
+    <div class="span-8 push-2 auto">
+      <div class="pages-content">
+        {% if section.settings.page != blank %}
+          {% assign feat_page = pages[section.settings.page] %}
+          {{ feat_page.content }}
+        {% else %}
+          <div class="rte">
+            {{ section.settings.rich_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.page == blank and section.settings.rich_text == blank %}
+          <div class="content-onboard">
+            <p>Use this section to tell customers about your store or add content from one of your pages which makes it easy to add images, video or any other content</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <style>
+    .rich-text-{{ section.id }} h2 {
+      font-size: {{ section.settings.heading_size }}px;
+    }
+    .rich-text-{{ section.id }} p,
+    .rich-text-{{ section.id }} a,
+    .rich-text-{{ section.id }} .pages-content,
+    .rich-text-{{ section.id }} .pages-content p,
+    .rich-text-{{ section.id }} .pages-content a {
+      font-size: {{ section.settings.text_size }}px !important;
+      font-family: var(--heading-family);
+    }
+    @media (max-width: 767px) {
+      .rich-text-{{ section.id }} h2 {
+        font-size: calc({{ section.settings.heading_size }}px - ({{ section.settings.heading_size }}px * 0.15));
+      }
+      .rich-text-{{ section.id }} p {
+        font-size: calc({{ section.settings.text_size }}px - ({{ section.settings.text_size }}px * 0.15));
+      }
+    }
+  </style>
+</section>
+
+
+{% schema %}
+{
+  "name": "Rich text",
+  "class": "dynamic-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Welcome"
+    },
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "Text",
+      "default": "<p><em>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</em></p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 32
+    },
+    {
+      "type": "page",
+      "id": "page",
+      "label": "Or Show content from a page"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section spacing",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "both",
+          "label": "Both"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "both"
+    }
+  ],
+  "presets":[
+    {
+      "name":"Rich text"
+    }
+  ],
+  "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "product", "search"]
+}
+{% endschema %}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js supports-no-cookies" lang="{{ request.locale.iso_code }}">
+<head>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K4NFJ525');</script>
+<!-- End Google Tag Manager -->
+  
+<meta name="facebook-domain-verification" content="agotvjzwf9aemlr5uj1idlu5d4zj5p" />
+<meta name="facebook-domain-verification" content="dcivi9p0323cwz990v2umfuuh7q88k" />
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Establish early connection to external domains -->
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+  <link rel="preconnect" href="//ajax.googleapis.com" crossorigin />
+
+  {%- assign main_font = settings.main_font -%}
+  {%- assign heading_font = settings.heading_font -%}
+  {%- assign nav_font = settings.nav_font -%}
+  {%- assign main_font_bold = main_font | font_modify: 'weight', 'bolder' -%}
+  {%- assign main_font_italic = main_font | font_modify: 'style', 'italic' -%}
+  {%- assign main_font_bold_italic = main_font_bold | font_modify: 'style', 'italic' -%}
+
+    <!-- Preload onDomain stylesheets and script libraries -->
+  <link rel="preload" href="{{ 'stylesheet.css' | asset_url }}" as="style">
+  <link rel="preload" as="font" href="{{ main_font | font_url }}" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="{{ nav_font | font_url }}" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="{{ heading_font | font_url }}" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'scripts.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
+
+
+  {%- if canonical_url != blank -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+  {%- endif -%}
+
+
+  <title>{% if template == 'index' %}{% if page_title contains 'Welcome' %}{{ shop.name }} &ndash; Welcome{% else %}{{ page_title }}{% endif %}{% elsif template == '404' %}Page Not Found{% elsif page_title contains shop.name %}{{ page_title }}{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %}</title>
+  {% if page_description %}<meta name="description" content="{{ page_description }}" />{% endif %}
+
+  {% render 'snip-social-meta-tags' %}
+  {% render 'snip-structured-data' %}
+  {% render 'css-variables' %}
+
+  <link rel="stylesheet" href="{{ 'stylesheet.css' | asset_url }}">
+
+  <style>
+  {{ main_font | font_face: font_display: 'swap' }}
+  {{ nav_font | font_face: font_display: 'swap' }}
+  {{ heading_font | font_face: font_display: 'swap' }}
+  {{ main_font_bold | font_face: font_display: 'swap' }}
+  {{ main_font_italic | font_face: font_display: 'swap' }}
+  {{ main_font_bold_italic | font_face: font_display: 'swap' }}
+  </style>
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | asset_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | asset_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | asset_url }}">
+<link rel="manifest" href="{{ "site.webmanifest" | asset_url }}">
+<link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | asset_url }}" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+  
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+  
+  <script src="https://smarteucookiebanner.upsell-apps.com/gdpr_adapter.js?shop=de-bladeren.myshopify.com" type="application/javascript"></script>
+  {% capture 'header_content' %}{{ content_for_header }}{% endcapture %}{{ header_content | replace: "trekkie.load(", "(window.deferTrekkie || trekkie.load)(" }}
+
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} js-slideout-toggle-wrapper js-modal-toggle-wrapper">
+
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4NFJ525"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  
+  {% if settings.enable_age_verify %}
+    {% render 'snip-age-verification' %}
+  {% endif %}
+
+  <div class="js-slideout-overlay site-overlay"></div>
+  <div class="js-modal-overlay site-overlay"></div>
+
+  <aside class="slideout slideout__drawer-left" data-wau-slideout="mobile-navigation" id="slideout-mobile-navigation">
+    {% section 'mobile-navigation' %}
+  </aside>
+
+  {% if settings.cart_type == 'mini_cart' %}
+  <aside class="mini-cart slide-top">
+    {% render 'cart-mini' %}
+  </aside>
+  {% endif %}
+
+  <main class="site-wrap shown">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <div class="page-wrap mb10">
+      {{ content_for_layout }}
+    </div>
+
+    {% section 'pre-footer' %}
+    {% section 'footer' %}
+  </main>
+
+  {% section 'popup' %}
+
+  {%- if settings.cart_type == 'drawer' -%}
+    <aside class="slideout slideout__drawer-right mini-cart" data-wau-slideout="ajax-cart" id="slideout-ajax-cart">
+      {% render 'cart-mini' %}
+    </aside>
+  {% elsif settings.cart_type == 'modal_cart' %}
+    <div class="modal__container" data-wau-modal="ajax-cart" id="modal-ajax-cart">
+      <div class="modal__inner-wrapper">
+        {% render 'cart-mini' %}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {% render 'cart-config' %}
+
+  {%- if request.page_type contains 'customers/' or request.page_type contains 'cart' -%}
+  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <script src="{{ 'scripts.js' | asset_url }}"></script>
+  <script src="{{ 'theme.js' | asset_url }}"></script>
+
+  {%- if request.page_type contains 'customers/' -%}
+  <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <script>
+  AOS.init();
+  document.documentElement.className =
+     document.documentElement.className.replace("no-js","js");
+  </script>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+ <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+     <!-- Background of PhotoSwipe.
+          It's a separate element as animating opacity is faster than rgba(). -->
+     <div class="pswp__bg"></div>
+     <!-- Slides wrapper with overflow:hidden. -->
+     <div class="pswp__scroll-wrap">
+         <!-- Container that holds slides.
+             PhotoSwipe keeps only 3 of them in the DOM to save memory.
+             Don't modify these 3 pswp__item elements, data is added later on. -->
+         <div class="pswp__container">
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+         </div>
+         <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+         <div class="pswp__ui pswp__ui--hidden">
+           <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+             {% render 'snip-icons', type: 'theme', icon: 'left-arrow', classes:'sm m0 absolute r0', fill: 'var(--directional-text)', hover: 'var(--directional-text-hover)' %}
+           </button>
+           <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+             {% render 'snip-icons', type: 'theme', icon: 'right-arrow', classes:'sm m0 absolute r0', fill: 'var(--directional-text)', hover: 'var(--directional-text-hover)' %}
+           </button>
+           <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+         </div>
+     </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="mobile-nav__mobile-header {{ type }} wrapper narrow mb1 pt5 pb5">
+  <ul class="span-3 md-span-3 sm-span-3 auto a-left v-center list-style-none mb0">
+    <li>
+      <div class="slideout__trigger--close">
+        <button class="slideout__trigger-{{ type }} js-slideout-close btn-as-link a-left" data-slideout-direction="{{ slideout_direction }}" aria-label="Close navigation" tabindex="0" type="button" name="button">
+          {% render 'snip-icons', type: 'theme', icon: 'close', classes:'sm mt0 mr0 mb0 ml0', fill: 'var(--text-color)', hover: 'var(--icon-hover)' %}
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="site-logo mobile-nav__logo-wrapper span-6 md-span-6 sm-span-6 auto a-center v-center">
+    {% if section.settings.logo != blank %}
+      <a class="mobile-nav__img-logo mb0 lh0 inline-block v-center" href="{{ routes.root_url }}">
+        <img src="{{ section.settings.logo | img_url: '800x' }}" alt="{{ shop.name }}">
+      </a>
+    {% endif %}
+  </div>
+  <ul class="span-3 md-span-3 sm-span-3 auto a-right v-center list-style-none inline-block mb0 header-cart-links-mobile">
+    {%- unless type == 'filters' -%}
+      {% render 'header-cart-links', classes: "p0 m0", use_icons: true, is_mobile: true %}
+    {%- endunless -%}
+  </ul>
+</div>

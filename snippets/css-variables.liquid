@@ -1,0 +1,145 @@
+{% style %}
+  {%- liquid
+    assign main_font = settings.main_font
+    assign nav_font = settings.nav_font
+    assign heading_font = settings.heading_font
+  -%}
+
+  :root {
+    --heading-family: {{ heading_font.family }};
+    --heading-weight: {{ heading_font.weight }};
+    --heading-style: {{ heading_font.style }};
+    --heading-spacing: 1px;
+    --heading-align: {{ settings.section_title_align }};
+
+    --main-family: {{ main_font.family }};
+    --main-weight: {{ main_font.weight }};
+    --main-style: {{ main_font.style }};
+    --main-spacing: 0.5px;
+
+    --nav-family: {{ nav_font.family }};
+    --nav-weight: {{ nav_font.weight }};
+    --nav-style: {{ nav_font.style }};
+    --nav-spacing: 0px;
+
+    --font-size: {{ settings.font_size}}px;
+    --nav-size: {{ settings.nav_size }}px;
+    --h1-size: {{ settings.h1_size }}px;
+    --h2-size: {{ settings.h2_size }}px;
+    --h3-size: {{ settings.h3_size }}px;
+
+    --font-size-sm: calc({{ settings.font_size}}px - 2px);
+
+    --buttons-size: {{ settings.buttons_size }};
+    --buttons-transform: {{ settings.buttons_transform }};
+    --buttons-border-weight: {{ settings.buttons_border_weight }}px;
+    --buttons-corners: 0;
+    --button-weight: {{ settings.main_font.weight }};
+
+    --form-border-weight: 1px;
+
+    --keyboard-focus: {{ settings.keyboard_focus }};
+    --keyboard-border-style: {{ settings.focus_border_style }};
+    --keyboard-border-weight: {{ settings.focus_border_weight }}px;
+    --keyboard-border-offset-weight: -{{ settings.focus_border_weight }}px;
+    --age-text-color: {{ settings.age_text_color }};
+    --age-bg-color: {{ settings.age_bg_color }};
+
+    --customer-banner-height: {{ settings.customer_banner_height }}px;
+
+    --phone-number-text: {{ settings.phone_number_text }};
+    --phone-number-background: {{ settings.phone_number_background }};
+    --shop-note-text: {{ settings.shop_note_text }};
+    --shop-note-background: {{ settings.shop_note_background }};
+    --announcement-background: {{ settings.announcement_background }};
+    --announcement-text: {{ settings.announcement_text_color }};
+    --header-wrapper-background: {{ settings.header_wrapper_background }};
+    --logo-color: {{ settings.logo_color }};
+    --header-links: {{ settings.header_links }};
+    --header-links-hover: {{ settings.header_links_hover }};
+    --background: {{ settings.background }};
+    --background-dark: {{ settings.background | color_darken: 20 }};
+    --secondary-bg: {{ settings.secondary_bg }};
+    --accent-color: {{ settings.accent_color }};
+    --heading-color: {{ settings.heading_color }};
+    --text-color-light: {{ settings.text_color | color_lighten: 30 }};
+    --text-color: {{ settings.text_color }};
+    --link-color: {{ settings.link_color }};
+    --link-hover: {{ settings.link_hover_color }};
+    --dotted-color: {{ settings.border_color }};
+    --box-shadow-color: {{ settings.box_shadow_color }};
+    --sale-color: {{ settings.sale_color }};
+    --sale-color-light: {{ settings.sale_color | color_lighten: 30 }};
+    --sold-out: {{ settings.sold_out }};
+    --sold-out-light: {{ settings.sold_out | color_lighten: 30 }};
+    --new-icon: {{ settings.new_icon }};
+    --new-icon-light: {{ settings.new_icon | color_lighten: 30 }};
+    --error-msg-dark: {{ settings.error_msg }};
+    --error-msg-light: {{ settings.error_msg | color_lighten: 30 }};
+    --success-msg-dark: {{ settings.success_msg }};
+    --success-msg-light: {{ settings.success_msg | color_lighten: 30 }};
+    --button-border: {{ settings.button_border }};
+    --button-text: {{ settings.button_text }};
+    --button-border-hover: {{ settings.button_border_hover }};
+    --button-text-hover: {{ settings.button_text_hover }};
+    --button-bg: {{ settings.button_bg }};
+    --button-bg-hover: {{ settings.button_bg_hover }};
+    --button-secondary-bg: {{ settings.button_secondary_bg }};
+    --button-secondary-text: {{ settings.button_secondary_text }};
+    --button-secondary-bg-hover: {{ settings.button_secondary_bg_hover }};
+    --button-secondary-text-hover: {{ settings.button_secondary_text_hover }};
+    --dropdown-link-color: {{ settings.dropdown_link_color }};
+    --dropdown-bg-color: {{ settings.dropdown_bg_color }};
+    --dropdown-hover-link-color: {{ settings.dropdown_hover_link_color }};
+    --directional-bg: {{ settings.directional_bg }};
+    --directional-hover-bg: {{ settings.directional_hover_bg }};
+    --directional-text: {{ settings.directional_text }};
+    --directional-text-hover: {{ settings.directional_text_hover }};
+    --accordion-text: {{ settings.text_color }};
+    --accordion-header-bg: {{ settings.background }};
+    --accordion-content-bg: {{ settings.secondary_bg }};
+    --swatch-text: {{ settings.swatch_text }};
+    --swatch-bg: {{ settings.swatch_bg }};
+    --swatch-border: {{ settings.swatch_border }};
+    --swatch-selected-text: {{ settings.swatch_selected_text }};
+    --swatch-selected-bg: {{ settings.swatch_selected_bg }};
+    --swatch-selected-border: {{ settings.swatch_selected_border }};
+    --prefooter-bg: {{ settings.prefooter_bg }};
+    --prefooter-text: {{ settings.prefooter_text }};
+    --prefooter-button-bg: {{ settings.prefooter_button_bg }};
+    --prefooter-button-text: {{ settings.prefooter_button_text }};
+    --footer-bg: {{ settings.footer_bg }};
+    --footer-bg-light: {{ settings.footer_bg | color_lighten: 5 }};
+    --footer-border: {{ settings.footer_text_color }};
+    --footer-header: {{ settings.footer_text_color }};
+    --footer-text: {{ settings.footer_text_color }};
+    --footer-link-hover: {{ settings.footer_link_hover }};
+    --footer-darker: {{ settings.footer_text_color | color_darken: 30 }};
+    --footer-icon-fill: {{ settings.footer_icon_fill }};
+    --footer-icon-hover: {{ settings.footer_icon_hover }};
+    --icon-fill: {{ settings.icon_fill }};
+    --icon-hover: {{ settings.icon_hover }};
+    --free-shipping-bg: {{ settings.free_shipping_bg }};
+    --free-shipping-text: {{ settings.free_shipping_text }};
+    --slideshow-btn-height: 34px;
+    --slideshow-btn-width: 34px;
+    --masonry-padding: 20px;
+    --color-body-text: var(--text-color);
+    --color-body: var(--background);
+    --color-bg: var(--background);
+    --disabled-text: {{ settings.text_color | color_lighten: 50 }};
+    --section-padding: {{ settings.section_padding }}px;
+
+    --star-active: {{ settings.text_color | color_to_rgb }};
+    --star-inactive: {{ settings.text_color | color_lighten: 30 | color_to_rgb }};
+  }
+  @media (max-width: 740px) {
+    :root {
+      --font-size: calc({{ settings.font_size }}px - ({{ settings.font_size }}px * 0.15));
+      --nav-size: calc({{ settings.nav_size }}px - ({{ settings.nav_size }}px * 0.15));
+      --h1-size: calc({{ settings.h1_size }}px - ({{ settings.h1_size }}px * 0.15));
+      --h2-size: calc({{ settings.h2_size }}px - ({{ settings.h2_size }}px * 0.15));
+      --h3-size: calc({{ settings.h3_size }}px - ({{ settings.h3_size }}px * 0.15));
+    }
+  }
+{% endstyle %}

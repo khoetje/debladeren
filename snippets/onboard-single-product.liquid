@@ -1,0 +1,74 @@
+<article
+id="product-photos"
+class="span-6 v-center">
+<span class="demo-1 color-2">{{ 'product-1' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</span>
+</article>
+
+<article
+  id="product-description"
+  class="span-4 push-7 v-center">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'product_title' %}
+        <h3 class="lh2 mb2" {{ block.shopify_attributes }}>
+          {{ 'products.product.onboarding.title' | t }}
+        </h3>
+      {% when 'product_subtitle' %}
+        <h4 class="subtitle mb2" {{ block.shopify_attributes }}>{{ 'products.product.onboarding.subtitle' | t }}</h4>
+      {% when 'product_form' %}
+        <div {{ block.shopify_attributes }}>
+          <div class="variants">
+            {%- if block.settings.show_quantity -%}
+              <div class="quantity">
+                <div class="quantity-selector">
+                  <label for="productQty">{{ 'products.product.quantity' | t }}</label>
+                  <div class="selector">
+                    <input id="productQty" min="1" type="text" name="quantity" class="product-qty" value="1" />
+                    <div class="controls">
+                      <a class="downer quantity-control-down mr1 mb0">
+                        {% render 'snip-icons', type: 'theme', icon: 'minus', classes: 'sm', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+                      </a>
+                      <a class="up quantity-control-up ml1 mb0">
+                        {% render 'snip-icons', type: 'theme', icon: 'plus', classes: 'sm', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="product-add mt4">
+
+            <button
+             type="submit"
+             name="add"
+             class="add-item add w100 btn-secondary"
+             disabled="disabled">
+                 <span data-product-price>
+                   $14.55 -
+                 </span>
+
+                 <span class="hide" data-compare-text>
+                   {{ 'products.product.regular_price' | t }}
+                 </span>
+                 <span class="strike ml1" data-compare-price>
+                 </span>
+
+                 <span data-add-to-cart-text>
+                   {{ 'products.product.sold_out' | t }}
+                 </span>
+           </button>
+          </div>
+        </div>
+      {% when 'social_share' %}
+        <div class="social-share a-center mt6" {{ block.shopify_attributes }}>
+          <p class="inline-block mb0 v-center">{{ 'products.product.social_share' | t }}</p>
+          {% render 'snip-social-sharing',
+            share_title: product.title,
+            share_permalink: product.url,
+            share_image: product %}
+        </div>
+    {% endcase %}
+  {% endfor %}
+</article>

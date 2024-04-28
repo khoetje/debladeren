@@ -1,0 +1,321 @@
+{% comment %} Image Gallery Logic {% endcomment %}
+{%- liquid
+
+  assign section_padding = ''
+  if section.settings.section_padding == 'top'
+    assign section_padding = 'pb0'
+  elsif section.settings.section_padding == 'bottom'
+    assign section_padding = 'mt0'
+  elsif section.settings.section_padding == 'none'
+    assign section_padding = 'mt0 pb0'
+  endif
+
+  if settings.section_title_align == 'left'
+    assign heading_align = 'a-left'
+  else
+    assign heading_align = 'a-center'
+  endif
+-%}
+
+{% comment %} Image Gallery Template {% endcomment %}
+<section
+  class="global__section section-gallery image-gallery gallery-{{ section.id }} {{ section_padding }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="image-gallery">
+  <div class="wrapper">
+    {% render 'snip-headings', align: heading_align,  grid: 'span-12 auto', heading: section.settings.title %}
+  </div>
+  <div class="flex-container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'image' %}
+          {% case block.settings.image_width %}
+            {% when '25' %}
+              {%- assign image_width = 'one-quarter' -%}
+            {% when '33' %}
+              {%- assign image_width = 'one-third' -%}
+            {% when '50' %}
+              {%- assign image_width = 'one-half' -%}
+            {% when '66' %}
+              {%- assign image_width = 'two-thirds' -%}
+            {% when '75' %}
+              {%- assign image_width = 'three-quarters' -%}
+            {% when '100' %}
+              {%- assign image_width = 'one-whole' -%}
+          {% endcase %}
+
+          <div class="homepage-promo promo-{{ block.id }} {{ image_width }} flex-item" {{ block.shopify_attributes }}>
+            <div class="promo-inner relative">
+              {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+                {% if block.settings.image != blank %}
+                  {% render 'helper-image' | type: block.settings.image, data_widths: '[180, 360, 540, 720, 900, 1080, 1296, 1512]' %}
+                  <noscript>
+                    <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.image.alt }}">
+                  </noscript>
+                {% else %}
+                  <div class="onboard demo-1 color-2">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {% endif %}
+                <div class="caption">
+                  {% if block.settings.title != blank %}
+                    <h3>{{ block.settings.title | escape }}</h3>
+                  {% endif %}
+                  {% if block.settings.hidden_text != blank %}
+                    <p class="mb1">{{ block.settings.hidden_text | escape }}</p>
+                  {% endif %}
+                </div>
+              {% if block.settings.link != blank %}</a>{% endif %}
+            </div>
+            <style>
+              .homepage-promo.promo-{{ block.id }} .caption h3 {
+                color: {{ block.settings.promo_color }};
+              }
+              .homepage-promo.promo-{{ block.id }} .caption p {
+                color: {{ block.settings.hidden_color }};
+              }
+            </style>
+          </div>
+        {% when 'row_break' %}
+         <div class="clear"></div>
+     {% endcase %}
+    {% endfor %}
+
+    {% if section.blocks.size == 0 %}
+      {% render 'onboard-no-blocks' %}
+    {% endif %}
+  </div>
+
+  <div class="clear"></div>
+
+<style>
+  {% if section.settings.image_padding == 'padding' %}
+    .gallery-{{ section.id }} .flex-container {
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+    .gallery-{{ section.id }} .flex-container .flex-item {
+      padding: 10px !important;
+    }
+  {% endif %}
+  {% if section.settings.full_width %}
+    .gallery-{{ section.id }} .flex-container {
+      width: 102.4%;
+      margin-left: -20px;
+    }
+    @media (max-width: 980px) {
+      .gallery-{{ section.id }} .flex-container {
+        width: 105.5%;
+        margin-left: -10px;
+      }
+    }
+  {% else %}
+    .gallery-{{ section.id }} .flex-container {
+      width: 100%;
+      padding-left: 3%;
+      padding-right: 3%;
+      margin: 0 auto !important;
+    }
+  {% endif %}
+
+  .gallery-{{ section.id }} .homepage-promo .promo-inner h3 {
+    font-size: {{ section.settings.promo_size }}px;
+    line-height: 1;
+  }
+  .gallery-{{ section.id }} .homepage-promo .promo-inner p {
+    font-size: {{ section.settings.hidden_size }}px;
+  }
+
+  @media (max-width: 767px) {
+    .image-gallery.gallery-{{ section.id }} .caption {
+      display: block;
+    }
+    .gallery-{{ section.id }} .homepage-promo .promo-inner h3 {
+      font-size: calc({{ section.settings.promo_size }}px - ({{ section.settings.promo_size }}px * 0.15));
+    }
+    .gallery-{{ section.id }} .homepage-promo .promo-inner p {
+      font-size: calc({{ section.settings.hidden_size }}px - ({{ section.settings.hidden_size }}px * 0.15));
+    }
+  }
+</style>
+</section>
+
+{% schema %}
+  {
+      "name": "Image gallery",
+      "class": "dynamic-section",
+  	  "max_blocks": 16,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Enable full width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Image Gallery"
+        },
+        {
+          "type": "range",
+          "id": "promo_size",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "label": "Heading size",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "hidden_size",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Subheading size",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "image_padding",
+          "label": "Choose Style",
+          "default": "padding",
+          "options": [
+           {
+               "value": "padding",
+               "label": "Space around images"
+            },
+            {
+               "value": "no-padding",
+               "label": "Images touching"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "section_padding",
+          "label": "Section spacing",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            },
+            {
+              "value": "both",
+              "label": "Both"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "both"
+        }
+      ],
+    	"blocks": [
+        {
+          "type": "image",
+          "name": "Image",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "select",
+              "id": "image_width",
+              "label": "Container width",
+              "default": "33",
+              "options": [
+               {
+                   "value":"25",
+                   "label":"25%"
+                },
+                {
+                   "value":"33",
+                   "label":"33%"
+                },
+                {
+                   "value":"50",
+                   "label":"50%"
+                },
+                {
+                   "value":"66",
+                   "label":"66%"
+                },
+                {
+                   "value":"75",
+                   "label":"75%"
+                },
+                {
+                   "value":"100",
+                   "label":"100%"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link",
+              "info": "Optional"
+            },
+             {
+              "type": "text",
+              "id": "title",
+              "label": "Image heading",
+              "default": "Heading"
+             },
+             {
+              "type": "text",
+              "id": "hidden_text",
+              "label": "Image subheading",
+              "default": "Subheading",
+              "info": "Shown on hover"
+             },
+            {
+              "type": "color",
+              "id": "promo_color",
+              "label": "Heading",
+              "default": "#5A7057"
+            },
+            {
+              "type": "color",
+              "id": "hidden_color",
+              "label": "Subheading",
+              "default": "#AC5F1F"
+            }
+          ]
+        },
+        {
+          "type": "row_break",
+          "name": "Row Break",
+          "settings": []
+        }
+      ],
+      "presets": [
+        {
+          "name": "Image gallery",
+          "blocks": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "image"
+            },
+            {
+              "type": "image"
+            }
+          ]
+        }
+      ],
+      "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "product", "search"]
+    }
+  {% endschema %}

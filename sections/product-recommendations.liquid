@@ -1,0 +1,185 @@
+{% comment %} Product Recommendations Logic {% endcomment %}
+{%- liquid
+  if settings.section_title_align == 'left'
+    assign heading_align = 'a-left'
+  else
+    assign heading_align = 'a-center'
+  endif
+-%}
+
+
+{% comment %} Product Recommendations Template {% endcomment %}
+<section
+  class="global__section product-recommendations__wrapper relative mt7"
+  data-section-id="{{ section.id }}">
+  {%- if recommendations.performed -%}
+    {%- if recommendations.products_count > 0 -%}
+      <div class="product-recommendations">
+        <div class="wrapper">
+          {% render 'snip-headings', grid: 'span-12', align: 'a-center',  heading: section.settings.product_recommendations_heading %}
+        </div>
+
+        <div class="product-loop wrapper cg6 sm-cg1 rg9">
+          {%- for product in recommendations.products limit: section.settings.items_shown -%}
+          {%- liquid
+            assign icon_type = ''
+            assign icon_text = ''
+
+            if product.available
+              for col in product.collections
+               if col.handle == 'new'
+                 assign icon_type = 'new'
+                 assign icon_text =  'products.general.new' | t
+               endif
+              endfor
+              if product.price < product.compare_at_price
+                assign icon_type = 'sale-item'
+                assign icon_text =  'products.general.sale' | t
+              endif
+            else
+              assign icon_type = 'sold-out'
+              assign icon_text =  'products.general.sold' | t
+            endif
+
+            assign product_info_align =  'a-center'
+
+            case section.settings.items_per_row
+            when 4
+              assign items_per_row = 'span-3 sm-span-6 auto'
+            when 3
+              assign items_per_row = 'span-4 sm-span-6 auto'
+            when 2
+              assign items_per_row = 'span-6 sm-span-6 auto'
+            when 1
+              assign items_per_row = 'span-12 sm-span-6 auto'
+            endcase
+          -%}
+
+          <article
+            class="product-listing dropshadow--{{ settings.product_grid_dropshadow }} padding--{{ settings.product_grid_padding }} {{ items_per_row }} relative {{ settings.image_ratio }} a-center"
+            data-alpha="{{ product.title }}"
+            data-price="{{ product.price }}"
+            {% render 'helper-animation', type: 'scroll' %}>
+
+            <a href="{{ product.url | within: collection }}">
+              <div class="product-image relative sm-px0 sm-py0{%- if settings.product_grid_padding -%} px7 py7{%- endif -%}">
+                {% unless icon_type == '' %}
+                  <div class="{{ icon_type }} icn">{{ icon_text }}</div>
+                {% endunless %}
+
+                <div class="reveal relative">
+                  {%- if product.featured_media != blank -%}
+                    {% render 'helper-image', type: product.featured_media, data_widths: '[180, 360, 540, 720, 900]' %}
+                  {%- else -%}
+                    <span class="demo-1 color-2">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+
+              <div class="product-info mt1 pb1 px1 sm-px0 {{ product_info_align }}">
+                {% if settings.vendor %}
+                  <small class="product-vendor block mb1">{{ product.vendor }}</small>
+                {% endif %}
+                  <p class="product-title">{{ product.title }}</p>
+                  {% if product.description contains '[#subtitle]' %}
+                    {% assign subtitle = product.description | split: '[/subtitle]' | first | split: '[#subtitle]' | last %}
+                    <p class="product-subtitle mb0">{{ subtitle }}</p>
+                  {% endif %}
+              </div>
+
+              <div class="product-price mt1 pb2 px1 {{ product_info_align }}">
+                {% if product.price < product.compare_at_price %}
+                  <span class="onsale inline-block mr1">
+                    {{ product.price | money }}
+                  </span>
+                  <span class="was inline-block">
+                    <del>{{ product.compare_at_price | money }}</del>
+                  </span>
+                {% else %}
+                  {% if product.price_varies %}
+                    {{ 'products.general.from' | t }} {{ product.price_min | money }} - {{ product.price_max | money }}
+                  {% else %}
+                    {{ product.price | money }}
+                  {% endif %}
+                {% endif %}
+              </div>
+             </a>
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- else  -%}
+    <div class="page-width js-product-rec-wrapper"
+      data-base-url="{{ routes.product_recommendations_url }}"
+      data-product-id="{{ product.id }}"
+      data-section-id="{{ section.id }}"
+      data-section-type="product-recommendations"></div>
+  {%- endif -%}
+</section>
+<style>
+  #related-products {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0 20px 20px 20px;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: var(--space-7);
+    max-width: 1500px;
+    height: 100%;
+  }
+  @media (max-width: 767px) {
+    #related-products .product-loop article {
+      flex: 0 0 auto;
+      width: 270px !important;
+      margin-right: 15px !important;
+    }
+    #related-products .product-loop {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch;
+      margin-right: 20px;
+      padding: 0;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)"
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "Related Products"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Products per row",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "items_shown",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Products shown",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,107 @@
+{%- liquid
+  assign icon_type = ''
+  assign icon_text = ''
+
+  assign has_padding = settings.product_grid_padding
+
+  assign has_dropshadow = settings.product_grid_dropshadow
+
+  if has_padding
+    assign item_padding = 'sm-px0 sm-py0 px6 py6'
+  else
+    assign item_padding = 'sm-px0 sm-py0 px0 py0'
+  endif
+
+  if product.available
+    for col in product.collections
+      if col.handle == 'new'
+        assign icon_type = 'new'
+        assign icon_text =  'products.general.new' | t
+      endif
+    endfor
+    if product.price < product.compare_at_price
+      assign icon_type = 'sale-item'
+      assign icon_text =  'products.general.sale' | t
+    endif
+  else
+    assign icon_type = 'sold-out'
+    assign icon_text =  'products.general.sold' | t
+  endif
+-%}
+
+<article
+  class="product-listing dropshadow--{{ has_dropshadow }} padding--{{ has_padding }} {{ carousel_slide }} {% unless carousel %}{{ items_per_row }}{% endunless %} relative {{ settings.image_ratio }}"
+  data-alpha="{{ product.title }}"
+  data-price="{{ product.price }}"
+  {% render 'helper-animation', type: 'scroll' %}>
+
+  <a href="{{ product.url | within: collection }}">
+    <div class="product-image relative {{ item_padding }}">
+      {% unless icon_type == '' %}
+        <div class="{{ icon_type }} icn">{{ icon_text }}</div>
+      {% endunless %}
+      <div class="reveal relative">
+        {%- if product.media.size < 1 -%}
+          <span class="demo-1 color-2">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+        {%- else -%}
+          {% render 'helper-image', type: product.featured_media.preview_image, data_widths: '[180, 360, 540, 720, 900, 1080]' %}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="product-info mt1 pb1 px1 sm-px0 {{ product_info_align }}">
+      {%- if settings.show_rating and product.metafields.reviews.rating.value != blank -%}
+        <div class="product__section--rating-wrapper">
+          {% liquid
+            assign rating_decimal = 0
+            assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+            if decimal >= 0.3 and decimal <= 0.7
+              assign rating_decimal = 0.5
+            elsif decimal > 0.7
+              assign rating_decimal = 1
+            endif
+          %}
+          <div class="product__section-rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
+            <span aria-hidden="true" class="product__section-rating-star color-icon" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+          </div>
+          <p class="product__section-rating-text caption">
+            <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
+          </p>
+          <p class="product__section-rating-count caption">
+            <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+            <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+          </p>
+        </div>
+      {%- endif -%}
+      {% if settings.product_grid_vendor %}
+        <small class="product-vendor block mb1">{{ product.vendor }}</small>
+      {% endif %}
+        <p class="product-title">{{ product.title }}</p>
+        {% if product.metafields.descriptors.subtitle != blank %}
+          <p class="product-subtitle mb0">{{ product.metafields.descriptors.subtitle.value }}</p>
+        {% elsif product.description contains '[#subtitle]' %}
+        {% assign subtitle = product.description | split: '[/subtitle]' | first | split: '[#subtitle]' | last %}
+        <p class="product-subtitle mb0">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+
+    <div class="product-price mt1 pb2 px1 sm-px0 {{ product_info_align }}">
+      {% if product.price < product.compare_at_price %}
+        <span class="onsale inline-block mr1">
+          {{ product.price | money }}
+        </span>
+        <span class="was inline-block">
+          <del>{{ product.compare_at_price | money }}</del>
+        </span>
+      {% else %}
+        {% if product.price_varies %}
+          {{ 'products.general.from' | t }} {{ product.price_min | money }} - {{ product.price_max | money }}
+        {% else %}
+          {{ product.price | money }}
+        {% endif %}
+      {% endif %}
+
+      {%- render 'product-unit-price', variant: product.selected_or_first_available_variant -%}
+    </div>
+   </a>
+</article>

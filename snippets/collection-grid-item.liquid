@@ -1,0 +1,56 @@
+{% if collection != blank %}
+  <article
+    class="collection-listing collection-loop product-listing {{ items_per_row }} relative {{ settings.image_ratio }}"
+    data-alpha="{{ collection.title }}"
+    {% render 'helper-animation', type: 'scroll' %}>
+
+    <a href="{{ collection.url }}" title="{{ collection_title }}">
+      <div class="collection-image relative sm-px0 sm-py0 px7 py7">
+        <div class="relative">
+          {% if collection.image %}
+            {% render 'helper-image', type: collection.image, data_widths: '[180, 360, 540, 720, 900, 1080]' %}
+            <noscript>
+              <img src="{{ collection.image | img_url: '1024x' }}" alt="{{ collection__image.alt | escape }}" class="collection__image">
+            </noscript>
+          {% else %}
+            {% render 'helper-image', type: collection.products.first.featured_media, data_widths: '[180, 360, 540, 720, 900, 1080]' %}
+            <noscript>
+              <img src="{{ collection.products.first.featured_media | img_url: '1024x' }}" alt="{{ collection.products.first.featured_media.alt | escape }}" class="collection__image">
+            </noscript>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="collection-info mt1 pb1 px1 a-center">
+        <h3 class="collection-title product-title">
+          {{ collection.title }}
+        </h3>
+      </div>
+    </a>
+  </article>
+{% else %}
+  {% assign placeholder = 'collection-' | append: cycle %}
+  <article
+    class="collection-listing collection-loop product-listing {{ items_per_row }} relative {{ settings.image_ratio }}"
+    data-alpha="{{ collection.title }}"
+    {% render 'helper-animation', type: 'scroll' %}>
+
+    <a href="#" rel="nofollow" title="Collection {{ index }}">
+      <div class="collection-image relative sm-px0 sm-py0 px7 py7">
+        <div class="demo-1 color-2 relative">
+          {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      </div>
+
+      <div class="collection-info mt1 pb1 px1 a-center">
+        <h3 class="collection-title product-title">
+          {{ 'products.product.collection' | t }} {{ index }}
+        </h3>
+        <p class="product-count block mb1">
+          {% assign cycle = cycle | times: 1 %}
+          {{ 'collections.general.item_count' | t: count: cycle }}
+        </p>
+      </div>
+    </a>
+  </article>
+{% endif %}

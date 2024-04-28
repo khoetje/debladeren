@@ -1,0 +1,19 @@
+<div class="share-icons inline-block v-center">
+  <a class="inline-block mb0" target="_blank" rel="noreferrer" aria-label="{{ 'social.icons.facebook' | t }}" href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}">
+    {% render 'snip-icons', type: 'social', icon: 'facebook', classes:'sm mt0 mr6 mb7 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    <span class="hide" aria-hidden="true">{{ 'social.icons.facebook' | t }}</span>
+    <span class="hide">{{ 'social.icons.facebook' | t }}</span>
+  </a>
+
+  <a class="inline-block mb0" target="_blank" rel="noreferrer" aria-label="{{ 'social.icons.twitter' | t }}" href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}">
+    {% render 'snip-icons', type: 'social', icon: 'twitter', classes:'sm mt0 mr6 mb7 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    <span class="hide" aria-hidden="true">{{ 'social.icons.twitter' | t }}</span>
+    <span class="hide">{{ 'social.icons.twitter' | t }}</span>
+  </a>
+
+  <a class="inline-block mb0" target="_blank" rel="noreferrer" aria-label="{{ 'social.icons.pinterest' | t }}" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}">
+    {% render 'snip-icons', type: 'social', icon: 'pinterest', classes:'sm mt0 mr6 mb7 ml0', fill: 'var(--icon-fill)', hover: 'var(--icon-hover)' %}
+    <span class="hide" aria-hidden="true">{{ 'social.icons.pinterest' | t }}</span>
+    <span class="hide">{{ 'social.icons.pinterest' | t }}</span>
+  </a>
+</div>
